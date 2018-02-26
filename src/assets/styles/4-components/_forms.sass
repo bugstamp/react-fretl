@@ -1,0 +1,268 @@
+.form
+	a
+		font-size: 17px
+		color: #070707
+
+	.form-header
+		padding-top: 20px
+		text-align: center
+		
+		h2
+			font-family: $fontIntroScript
+			font-size: 33px
+			line-height: 73px
+			margin-bottom: 25px
+			text-transform: none
+
+			span
+				width: 40px
+				height: 2px
+
+	.form-group
+		width: 100%
+		position: relative
+		margin: auto
+		margin-bottom: 25px
+		color: #000
+		overflow: visible
+
+		.form-group-label
+			display: block
+			margin-left: 36px
+			margin-bottom: 12px
+			font-size: 12px
+			line-height: 12px
+			font-weight: normal
+			letter-spacing: 1.25px
+			text-transform: uppercase
+			cursor: pointer
+
+			span
+				color: #df001b
+
+		.form-input-wrap
+			max-width: 100%
+			position: relative
+
+			input.form-control
+				width: 100%
+				height: 55px
+				font-size: 17px
+				font-weight: normal
+				line-height: 55px
+				padding: 0
+				padding-left: 32px
+				color: #8e8e8e
+				background-color: inherit
+				border: 2px dashed 
+				border-color: rgba(174, 165, 159, 0.17)
+				border-radius: 50px
+				letter-spacing: 0.34px
+				transition: $transitionEaseInOut
+				
+				&:focus
+					border-color: #aea59f
+					box-shadow: none
+				
+				&.is-invalid
+					border-color: #f06464
+
+				&.phone
+					text-indent: 200%
+					white-space: nowrap
+
+				&.phone-mask
+					width: 99%
+					height: 51px
+					position: absolute
+					top: 2px
+					left: 2px
+					right: 2px
+					bottom: 2px 
+					border: none
+
+			.icon
+				display: block
+				position: absolute
+				top: 18px
+				right: 25px
+
+			.reg-form-icon
+				position: absolute
+				top: 18px
+				right: 25px
+				font-size: 19px
+				color: #d0d0d0
+
+				&.icon-phone
+					font-size: 16px
+
+		&.check
+			display: flex
+			flex-flow: row nowrap
+			justify-content: space-between
+			align-items: center
+
+			.form-check-label
+				display: inline-block
+				position: relative
+				font-size: 17px
+				padding-left: 31px
+				color: #8e8e8e
+				cursor: pointer
+
+				&:after
+					content: ''
+					display: block
+					width: 24px
+					height: 24px
+					position: absolute
+					top: -2px
+					left: 0
+					border: 2px solid #ccc
+					border-radius: 2px
+					background: transparent
+
+				.check-box-custom
+					display: block
+					width: 16px
+					height: 16px
+					position: absolute
+					top: 2px
+					left: 4px
+					background-color: #000
+					border-radius: 2px
+
+			a.link-modal-pass
+				display: inline-block
+
+		.form-invalid-feedback
+			display: block
+			width: 100%
+			position: absolute
+			bottom: -21px
+			color: #f06464
+			font-size: 12px
+			letter-spacing: 1px
+			text-align: center
+			text-transform: uppercase
+			
+	.form-button-submit
+		display: block
+		max-width: 305px
+		width: 100%
+		height: 55px
+		margin: 0 auto
+		margin-top: 45px
+		font-size: 25px
+		line-height: 50px
+		color: #fff
+		border-bottom: 2px solid $clrProductButtonBorder
+		background-color: $clrProductButton
+		border-radius: 50px
+		transition: 0.3s ease-in-out
+		cursor: pointer
+
+		&:hover
+			background-color: $clrProductButtonHover
+
+		.icon-loading
+			font-size: 30px
+			line-height: 55px
+
+	.form-footer
+		position: absolute
+		bottom: -70px
+		left: 0
+		width: 100%
+		height: 70px
+		line-height: 70px
+		background-color: #f6f3ef
+		border-radius: 0 0 10px 10px
+		text-align: center
+
+		a
+			font-size: 22px
+
+.form
+	&.auth-form
+		.form-group
+			max-width: 370px
+
+	&.forgot-success-form
+		border-radius: 10px
+
+		.form-message
+			width: 100%
+			max-width: 370px
+			margin: 0 auto
+			margin-bottom: 25px
+			color: $clrBaseText
+
+			p
+				font-size: 23px
+				margin-bottom: 35px
+
+				span
+					color: #ffc713
+					text-decoration: underline
+
+			h2
+				font-size: 28px
+				line-height: 1em
+				text-transform: none
+				color: #000
+				margin-bottom: 20px
+
+	&.reg-form
+		max-width: 660px
+		margin: 0 auto
+		padding: 0 10px
+
+		.form-header
+			padding: 0
+			padding-left: 30px
+
+			h2
+				margin-top: 61px
+				margin-bottom: 30px
+				line-height: 33px
+
+		.form-group
+			padding-left: 30px
+
+			&.reg-form-footer
+				display: flex
+				flex-flow: row nowrap
+				justify-content: center
+				align-items: flex-start
+				padding-bottom: 5px
+				font-size: 17px
+				font-weight: 400
+				color: #8e8e8e
+				letter-spacing: .34px
+				
+				p
+					display: inline-flex
+							
+				a.link-sign-in
+					display: inline-flex
+					margin-left: 10px
+
+					>.icon
+						bottom: 0
+
+		.form-button-submit
+			margin-top: 0
+			border: 1px solid $clrProductButtonBorder
+
+			&:hover
+				color: $clrProductButtonBorder
+				background-color: #fff
+				
+	&.forgot-form
+		border-radius: 10px
+		
+		a
+			display: block
+			text-align: center

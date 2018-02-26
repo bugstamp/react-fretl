@@ -1,0 +1,14 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+  },
+  "plugins": [
+    "react" 
+  ],
+  "rules": {
+  	"react/no-array-index-key": 0,
+    "react/prefer-stateless-function": 0,
+    "no-nested-ternary": 0
+  }
+}

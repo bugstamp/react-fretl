@@ -1,0 +1,17 @@
+.products-list
+	display: flex
+	flex-flow: row wrap
+	padding-top: 67px
+
+	.product-wrapper
+		flex: 0 1 25%
+		padding: 0 11px 20px
+		margin-top: 20px
+
+		@include media-breakpoint-down(lg)
+			flex-basis: 50%
+
+		@include media-breakpoint-down(xs)
+			flex-basis: 100%
+
+		

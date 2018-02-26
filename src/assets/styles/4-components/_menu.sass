@@ -1,0 +1,78 @@
+.menu
+	display: flex
+	justify-content: space-between
+	align-items: center
+	position: relative
+
+	.search-form
+		flex: 0 1 100%
+		margin-right: 15px
+
+		.input
+			position: relative
+			font-size: 16px
+			box-sizing: content-box
+			
+			input
+				width: 100%
+				height: 42px
+				line-height: 42px
+				padding: 0 35px 0 15px
+				color: $clrBaseTextLighten
+				border: 1px dashed #454440
+				border-radius: 50px
+				font-weight: normal
+				letter-spacing: .5px
+				transition: $transitionBase
+
+				&:focus
+					color: #fff
+					border-color: #c4c4c4
+
+			.icon
+				width: 15px
+				height: 15px
+				position: absolute
+				top: 12px
+				right: 19px
+				background: url('../../images/icon/main-sprite.png')
+				background-position: -139px 0
+				cursor: pointer
+				opacity: 1
+	
+	.shopping-cart
+		flex: 0 0 115px
+
+		.cart-button
+			width: 100%
+			color: #1f1f1f
+			font-size: 17px
+			line-height: 10px
+			padding: 10px 5px 15px 5px
+			background-color: #fff
+			box-shadow: $clrCartShadow
+			border-radius: 50px
+			user-select: none
+			cursor: pointer
+			z-index: 10
+			transition: $transitionBase
+				
+			&:hover
+				box-shadow: $clrCartShadowHover
+
+			i.icon-cart
+				width: 15px
+				height: 15px
+				position: relative
+				top: 3px
+				left: 0
+				margin-right: 8px
+				background: url('../../images/icon/main-sprite.png')
+				background-position: -139px -16px
+
+			.text
+				margin-left: 2px
+
+	@include media-breakpoint-down(md)
+		.text
+		 	display: none

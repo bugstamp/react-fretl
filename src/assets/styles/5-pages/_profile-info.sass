@@ -1,0 +1,89 @@
+.side-bar
+  width: 310px
+  height: 100%
+  position: absolute
+  left: -21px
+  padding-top: 65px
+  background-color: #fff
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1)
+  transition: $transitionEaseInOut
+  z-index: 50
+
+  /* Animation */
+  &.show-enter
+    left: -21px
+
+  .side-bar-layout
+    max-width: 290px
+    width: 100%
+    position: relative
+    margin-left: auto
+
+  .close-button
+    display: block
+    width: 30px
+    height: 30px
+    position: absolute
+    right: 20px
+    top: -50px
+    cursor: pointer
+    visibility: hidden
+
+    span
+      display: block
+      width: 30px
+      height: 2px
+      position: relative
+      top: 15px
+      background-color: #131313
+      transform: rotate(45deg)
+
+      &.rot
+        top: 13px
+        transform: rotate(-45deg)  
+
+  .list
+    display: flex
+    flex-flow: column nowrap
+
+    .list-row
+      color: #8e8e8e
+      font-size: 0
+      font-family: $fontIntroHead
+      margin-bottom: 22px
+      
+      .icon
+        display: inline-block
+        position: relative
+        top: 3px
+        
+      p
+        display: inline-block
+        font-size: 18px
+        line-height: 1em
+        margin-left: 12px
+
+      &.edit
+        margin-bottom: 40px
+        font-weight: normal
+
+      &.username
+        margin-bottom: 45px
+        color: #000
+        
+        .icon
+          vertical-align: top
+
+        p
+          font-size: 27px
+          line-height: 30px
+          font-weight: 400
+
+      &.home
+        margin-bottom: 44px
+
+  @include media-breakpoint-down(md)
+    left: -321px
+
+    .close-button
+      visibility: visible

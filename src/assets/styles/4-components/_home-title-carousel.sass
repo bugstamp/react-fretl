@@ -1,0 +1,67 @@
+#home-title
+	.slick-slider
+		display: none
+
+		@include media-breakpoint-down(lg)
+			display: block
+			margin-bottom: 90px
+	
+	.slick-slide
+		a
+			display: block
+			width: 190px
+			margin: 0 auto
+			text-align: center
+			cursor: pointer			
+			
+			&:hover
+				p
+					text-decoration: underline
+
+			p
+				font-family: $fontIntroScript
+				font-size: 25px
+				margin-top: 30px
+
+	.slick-arrow
+		display: block
+		position: absolute
+		top: 0
+		bottom: 0
+		padding: 0 10px
+		opacity: 0.3
+		cursor: pointer
+		z-index: 10
+		transition: opacity .3s
+
+		&:hover,
+		&:active
+			background-color: rgba(10, 10, 10, 0.4)
+			opacity: 1
+
+		&:before
+			content: ''
+			display: block
+			width: 42px
+			height: 73px
+			background-image: url("../../images/icon/main-sprite.png")
+			
+		
+		&.slick-prev
+			left: 0
+
+			&:before
+				background-position: 0 0
+
+		&.slick-next
+			right: 0
+
+			&:before
+				background-position: -43px 0
+
+
+
+
+
+
+

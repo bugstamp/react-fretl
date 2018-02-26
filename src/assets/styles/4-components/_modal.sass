@@ -1,0 +1,47 @@
+.modal-dialog
+  &.auth-modal
+    .modal-content
+      max-width: 480px
+      margin: 0 auto
+      border: none
+      border-radius: 0
+      background-color: transparent
+
+.modal-form
+  position: relative
+  padding: 0 20px
+  background-color: #fff
+  border-radius: 10px 10px 0 0
+  
+  .modal-close-custom
+    position: absolute
+    right: -60px
+
+    button
+      display: block
+      width: 42px
+      height: 32px
+      position: relative
+      right: 3px
+      margin: auto
+      background-color: transparent
+      cursor: pointer
+
+      span
+        display: block
+        width: 40px
+        height: 2px
+        position: absolute
+        top: 15px
+        background-color: #fff
+        transition: $transitionEaseInOut
+
+        &:nth-child(1)
+          transform: rotate(45deg)
+
+        &:nth-child(2)
+          transform: rotate(-45deg)
+
+    &:hover
+      span
+        background-color: #df001b

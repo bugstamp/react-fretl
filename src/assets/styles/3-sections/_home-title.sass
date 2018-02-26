@@ -1,0 +1,73 @@
+#home-title
+	padding: 206px 0 470px
+	color: $clrBaseLight
+	background: $bgHomeTitle
+	@include bgBaseRules
+
+	.title
+		max-width: 850px
+		position: relative
+		font-size: 30px
+		font-weight: normal
+		margin: 0 auto
+		text-align: center
+			
+		h2
+			display: block
+			font-family: $fontIntroRust
+			font-size: 1.6em /* 48px */
+			line-height: 1.5em /* 72px */
+
+		p
+			max-width: 785px
+			font-family: $fontIntroScript
+			font-size: 1.066667em /* 32px */
+			line-height: 1.46875em /* 47px */
+			margin: 25px auto 0
+			text-align: center
+			word-spacing: 5px
+
+	.choose
+		width: 150px
+		position: absolute
+		bottom: -70px
+		right: 0
+		font-family: $fontIntroScript
+		font-size: 24px
+		line-height: 29px
+		color: $clrBaseTextLighten
+		text-align: center
+		transform: rotateZ(-5deg)
+
+		.icon
+			width: 32px
+			height: 48px
+			position: absolute
+			right: -15px
+			bottom: -35px
+			background-image: url("../../images/icon/main-sprite.png")
+			background-position: -86px 0px
+	
+	
+	@include media-breakpoint-down(lg)
+		padding-bottom: 155px
+		background: $bgHomeTitleMin
+		@include bgBaseRules
+
+		.choose
+			position: relative
+			top: 0
+			margin: 60px auto
+	
+	@include media-breakpoint-down(md)
+		padding-top: 280px
+		padding-bottom: 30px
+		
+		.title
+			h2
+				font-size: 1em /* 30px */
+				line-height: 1.4em /* 42px */
+
+			p
+				font-size: 0.8em /* 24px */
+				line-height: 1.5em /* 36px */

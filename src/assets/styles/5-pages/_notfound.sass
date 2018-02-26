@@ -1,0 +1,45 @@
+.notfound-page
+	#header
+		background: $bgCategoryTitle
+
+	.title
+		padding-top: 115px
+		height: 80vh
+		padding: 20px 0
+		color: $clrBaseText
+		background-color: #fff
+
+		i.icon
+			width: 6px
+			height: 11px
+			display: inline-block
+			background: url('../../images/icon/back-arrow.png') no-repeat
+			margin-right: 7px
+		
+		button
+			width: 190px
+			font-size: 16px
+			padding: 10px 0
+			border: 1px dashed #e0e0df
+			border-radius: 50px
+			text-align: center
+			cursor: pointer
+			
+			&:hover
+				text-decoration: underline
+
+		h2
+			display: block
+			font-family: $fontIntroHead
+			font-size: 36px
+			font-weight: bold
+			line-height: 56px
+			margin: 15px 0
+
+		p
+			font-size: 22px
+			color: #000
+
+
+	@include media-breakpoint-down(md)
+		margin-top: 240px

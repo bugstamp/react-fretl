@@ -1,0 +1,27 @@
+#item-products
+	background-color: $clrBaseLight
+
+	.products-section-description
+		font-size: 30px
+
+		h2
+			display: block
+			font-family: $fontIntroRust
+			font-size: 1.4em /* 42px */
+			line-height: 1.738095 /* 73px */
+			color: $clrSectionTitle
+			margin: 66px 0 45px
+			text-align: center
+
+	.products-list
+		padding: 0
+		margin-bottom: 91px
+
+	.button-else
+		display: none
+
+	@include media-breakpoint-down(md)
+		.products-section-description
+			h2
+				font-size: 1em /* 30px */
+				line-height: 1.4em /* 42px */

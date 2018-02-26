@@ -1,0 +1,142 @@
+.cart
+	width: 100%
+	max-width: 395px
+	min-width: 355px
+	position: absolute
+	top: 40px
+	right: 0
+	padding: 20px 20px 18px 18px
+	font-size: 16px
+	color: $clrBaseText
+	background-color: #fff
+	border-radius: 5px
+	opacity: 0
+	visibility: hidden
+	transition: $transitionDropDown
+
+	&:after
+		content: ''
+		width: 15px
+		height: 15px
+		position: absolute
+		top: -3px
+		right: 25px
+		background-color: inherit
+		border-radius: 3px
+		transform: rotate(45deg)
+
+
+	&.show
+		top: 54px
+		opacity: 1
+		visibility: visible
+
+	p
+		font-size: 22px
+		text-align: center
+		color: #000
+
+	.list
+		max-height: 160px
+		overflow-x: auto
+		z-index: 1000
+
+		.line
+			display: flex
+			flex-flow: row nowrap
+			align-items: center
+			
+			.image
+				order: 1
+				max-width: 32px
+				flex: 0 32px
+				margin-right: 17px
+
+			.name
+				order: 2
+				flex: 0 31%
+				line-height: 1em
+				text-align: left
+
+			.value
+				order: 2
+				max-width: 65px
+				flex: 0 65px
+				display: flex
+				flex-flow: row nowrap
+				justify-content: center
+				align-items: center
+				font-size: 12px
+				padding: 0 4px
+				margin-left: auto
+				border: 1px dashed #e6e6e6
+				border-radius: 20px
+				color: #000
+				
+				input
+					font-size: 15px
+					text-align: center
+
+				.update-value
+					width: 15px
+					font-size: 15px
+					text-align: center
+					cursor: pointer
+					user-select: none
+
+			.price
+				order: 3
+				flex: 0 67px
+				text-align: center
+
+			.remove
+				order: 4
+				width: 10px
+				height: 10px
+				margin: 0 4px
+				background: url("../../images/icon/remove.png") no-repeat
+				cursor: pointer
+				transition: $transitionRapidly
+
+				&:hover
+					background: url("../../images/icon/remove-dark.png") no-repeat
+
+	.result
+		display: flex
+		flex-flow: nowrap row
+		justify-content: space-between
+		margin-top: 18px
+
+		.total
+			width: 135px
+			margin-top: 5px
+			text-align: right
+
+			span
+				font-size: 20px
+				margin-left: 10px
+				color: #000
+
+		.checkout
+			color: #fff
+			background-color: $clrProductButton
+			padding: 8px 23px
+			border-bottom: 1px solid $clrProductButtonBorder
+			border-radius: 50px
+			cursor: pointer
+	
+	@include media-breakpoint-down(lg)
+		padding: 10px
+
+	@include media-breakpoint-down(md)
+		padding: 20px 20px 18px 18px
+
+	@include breakpoint(400px, 'to')
+		min-width: 320px
+		padding: 20px 10px
+
+		.value
+			margin: 0 auto
+			
+			.update-value
+				display: none

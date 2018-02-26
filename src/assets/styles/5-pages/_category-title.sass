@@ -1,0 +1,45 @@
+#category-title
+	color: #ffffff
+	background: $bgCategoryTitle
+	@include bgBaseRules
+	padding: 150px 0 65px
+
+	.topic
+		max-width: 557px
+
+		h2
+			font-family: $fontIntroRust
+			font-size: 67px
+			line-height: 73px
+			margin-bottom: 15px
+
+		p
+			font-size: 18px
+			line-height: 30px
+
+	.image
+		width: 100%
+		position: absolute
+		padding: 23px 0 0 32px
+		text-align: center
+		
+		img
+			display: inline-block
+	
+	@include media-breakpoint-down(md)
+		padding-top: 300px
+
+		.topic
+			max-width: 100%
+
+	@include media-breakpoint-down(sm)
+		.topic
+			text-align: center
+
+			h2
+				font-size: 32px
+				line-height: 42px
+		
+		.image
+			position: relative
+			margin-bottom: 30px

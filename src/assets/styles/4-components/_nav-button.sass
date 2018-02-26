@@ -1,0 +1,50 @@
+.nav-button
+	display: none
+	width: 18px
+	height: 18px
+	position: relative
+	top: 7px
+	right: 10px
+	margin: 11px
+	cursor: pointer
+
+	.line
+		width: 20px
+		height: 2px
+		position: absolute
+		left: -1px
+		background-color: #000
+		transition: .3s
+
+		&.top
+			top: 2px
+
+		&.middle
+			top: 8px
+
+		&.bottom
+			bottom: 2px
+
+	&.check
+		.line
+			transition: $transitionBase
+		
+		.top
+			top: 0
+			left: 0
+			transform: rotate(45deg) translate(4.5px, 6.5px)
+
+		.middle
+			transform: rotate(45deg) translate(4.5px, 6.5px)
+			opacity: 0
+
+		.bottom
+			left: 0
+			bottom: 0
+			transform: rotate(-45deg) translate(4.5px, -6.5px)
+
+	@include media-breakpoint-down(lg)
+		display: block
+
+	@include media-breakpoint-down(md)
+		right: 0

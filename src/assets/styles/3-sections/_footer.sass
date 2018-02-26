@@ -1,0 +1,45 @@
+#footer
+	position: relative
+	padding: 71px 0 47px 
+	margin-top: 4px
+	background: url('../../images/background/footer-background.png') repeat
+	color: #fff
+
+	.link-sign-in
+		display: none
+
+	.wave
+		position: absolute
+		top: -3px
+		left: 0
+		right: 0
+		height: 4px
+		background: url('../../images/background/footer-wave.png') repeat
+
+	.phone
+		padding: 0
+		margin-top: 9px
+		text-align: right
+
+	.navigation
+		flex-flow: row wrap
+		justify-content: center
+		margin-top: 8px
+
+		a:hover,
+		a.link-active
+			color: $clrLinkHover
+			text-shadow: $clrLinkShadow
+
+	@include media-breakpoint-down(md)
+		.logo
+			padding: 30px 0
+			text-align: center
+
+		.phone
+			text-align: center
+		
+	@include media-breakpoint-down(xs)
+		.navigation
+			li
+				padding-bottom: 10px

@@ -1,0 +1,83 @@
+body
+	max-width    : 100%
+	height       : 100%
+	position     : relative
+	font-family  : $fontIntroHead
+	font-size    : 19px
+	line-height  : 21px
+	color        : #000
+	overflow-x   : hidden
+
+h1, h2, h3, h4, h5, h6
+	display        : inline-block
+	color          : inherit
+	font-weight    : normal
+	text-transform : uppercase
+	
+a,
+a:hover,
+a:active
+	font-family    : inherit
+	color          : inherit
+	text-decoration: none
+	outline        : none
+	vertical-align : baseline
+
+i
+	display        : inline-block
+	
+img
+	display        : block
+	max-width      : 100%
+	height         : auto
+	
+input
+	font-family    : inherit
+	color          : inherit
+	background     : none
+	border         : none
+	outline        : none	
+	
+section
+	width          : 100%
+	position       : relative
+	
+button,
+[role="button"]
+	padding        : 0
+	font-family    : inherit
+	color          : inherit
+	background  	 : none
+	border         : none
+	outline        : none
+	text-align     : center
+
+	&:focus
+		outline: none
+	
+.button
+	display: inline-block
+	width: 100%
+	color: #fff
+	font-family: $fontIntroHead
+	background-color: $clrProductButton
+	border-bottom: 2px solid $clrProductButtonHover
+	border-radius: 50px
+	cursor: pointer
+	transition: $transitionRapidly
+	
+	&:hover
+		color: #fff
+		background-color: $clrProductButtonHover
+		border-bottom: 2px solid $clrProductButtonHover
+
+.link
+	text-decoration: underline
+	cursor: pointer
+	transition: $transitionEaseInOut
+
+	&:hover
+		color: $clrLinkHover
+		text-shadow: $clrLinkShadow
+		text-decoration: none
+		

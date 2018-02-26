@@ -1,0 +1,126 @@
+#item-title
+	color: $clrBaseLight
+	background: $bgCategoryTitle
+	@include bgBaseRules
+	padding: 185px 0 58px
+
+	.image
+		padding-right: 20px
+		background: url("../../images/background/product-bg.png") no-repeat
+		background-position: center top
+		text-align: center
+
+		img
+			display: inline-block
+
+	.product
+		max-width: 100%
+		flex-flow: row wrap 
+		padding: 0
+		border: none
+		border-radius: 0
+		color: inherit
+		text-align: left
+		overflow: hidden
+
+		> *
+			flex: 1 100%
+
+		.product-link
+			display: none
+
+		.name
+			font-family: $fontIntroRust
+			font-size: 49px
+			line-height: 50px
+			padding: 0
+
+		.price
+			font-size: 42px
+			line-height: 21px
+			margin: 33px 0 45px
+
+		.price-old
+			display: none
+
+		.value
+			height: 40px
+			flex: 0 99px 
+			align-self: center
+			position: relative
+			margin-top: 0
+			margin-right: 13px
+			color: inherit
+			border: 1px dashed #c4c4c4
+			border-radius: 50px
+
+			.input
+				padding: 0
+
+			.update-value
+				width: 10px
+				height: 10px
+				position: absolute
+				top: 11px
+				padding: 0
+				margin: 0
+				font-size: 40px
+
+				&.dec
+					left: 6px
+
+				&.inc
+					right: 6px
+
+
+		.button-buy
+			flex: 0 190px
+			align-self: center
+			padding: 11px 0
+			margin: 0
+			line-height: normal
+			box-shadow: 0 0 35px rgba(245, 176, 77, 0.6)
+
+		.link-read-more
+			display: none
+
+	.info
+		text-align: left
+		margin-top: 30px
+
+		p
+			line-height: 30px
+			color: #bab2b2
+
+		.item-description
+			font-size: 22px
+			padding-bottom: 31px
+			border-bottom: 1px solid #cccccc;
+
+		.remark
+			padding-top: 31px
+
+	@include media-breakpoint-down(md)
+		padding-top: 330px
+	
+	@include media-breakpoint-down(sm)
+		.product
+			.name
+				font-size: 30px
+				line-height: 42px
+	
+	@include media-breakpoint-down(xs)
+		.image
+			padding-right: 0
+			
+		.product
+			justify-content: center
+			text-align: center
+			
+			.price
+				font-size: 32px
+				margin: 20px 0 25px
+
+		.info
+			margin-top: 45px
+			text-align: center

@@ -1,0 +1,64 @@
+#category-products
+	background-color: $clrBaseLight
+	color: $clrBaseDark
+
+	.products-list-wrapper
+		overflow: hidden
+
+	.top-bar
+		background-color: $clrBgGrey
+		
+		.top-bar-layout
+			display: flex
+			flex-flow: row wrap
+			justify-content: flex-start
+			align-items: center
+			font-size: 25px
+			padding: 33px 0
+
+		.title
+			font-family: $fontIntroRust
+			color: $clrSectionTitle
+			line-height: 60px
+			text-align: left
+
+		.toggle-button
+			display: flex
+			justify-content: flex-end
+			align-items: center
+			flex: 1 auto
+			color: $clrBaseText
+			cursor: pointer
+
+			.text
+				font-family: $fontIntroScript
+
+			.icon
+				display: inline-flex
+				width: 60px
+				height: 60px
+				margin-left: 25px
+				background: url('../../images/icon/close.png') no-repeat
+				background-position: center
+				border-radius: 50%
+				border: 1px solid #aaa
+				
+				&.check
+					background: url('../../images/icon/check.png') no-repeat
+					background-position: center
+
+	.products-list
+		padding: 38px 0 84px
+
+	@include media-breakpoint-down(sm)
+		.top-bar
+			.top-bar-layout
+				padding: 20px 0 28px
+
+			.title
+				flex: 0 100%
+
+	@include media-breakpoint-down(xs)
+		.top-bar
+			.title
+				text-align: center

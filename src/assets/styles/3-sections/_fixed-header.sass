@@ -1,0 +1,56 @@
+#fixed-header
+	height: 70px
+	position: fixed
+	top: -70px
+	color: $clrHeaderLink
+	background-color: #fafaf8
+	transition: $transitionBase
+	opacity: 0
+	visibility: hidden
+	z-index: 100
+
+	/* Animation */
+	&.slide-enter
+		top: 0
+		opacity: 1
+		visibility: visible
+
+	.logo
+		color: #b4b4b4;
+		font-size: 27px
+		margin-top: 24px
+		
+		h3
+			font-size: 27px
+
+		p
+			display: none
+
+	.navigation
+		margin-left: 77.5px
+		margin-top: 24px
+
+	.menu
+		justify-content: flex-end
+
+		.shopping-cart
+			margin-top: 13px
+
+			.cart-button,			
+			.cart-button:hover
+				box-shadow: $clrFixedCartShadow
+
+			.cart
+				top: 70px
+
+				@include breakpoint(400px, 'to')
+					right: -20px
+	
+	@include media-breakpoint-down(xs)
+		.logo
+			h3
+				font-size: 20px
+
+		.menu
+			.shopping-cart
+				flex: 0 0 90px

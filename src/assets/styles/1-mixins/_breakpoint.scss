@@ -1,0 +1,64 @@
+$media-queries: true;
+// Manual mobile/rwd mixin powerated by Bigos 
+// https://github.com/lukasborawski/bigos#mobilerwd
+
+@mixin breakpoint($point, $direction: false) {
+  @if ($media-queries) {
+    @if type-of($point) == number and not unitless($point) and $direction == false {
+      @media // Custom
+      only screen and (max-width: #{$point}),
+      only screen and (max-device-width: #{$point})
+      {
+        @content;
+      }
+    }
+    @if not $direction == false and $direction == 'from-to' {
+      $from : nth($point, 1);
+      $to   : nth($point, 2);
+      @media all // Custom
+      and (max-width: #{$to})
+      and (max-device-width: #{$to})
+      and (min-width: #{$from})
+      and (min-device-width: #{$from})
+      {
+        @content;
+      }
+    }
+    @if type-of($point) == number and not unitless($point) and not $direction == false and $direction == 'to' {
+      @media // Custom
+      only screen and (max-width: #{$point}),
+      only screen and (max-device-width: #{$point})
+      {
+        @content;
+      }
+    }
+    @if type-of($point) == number and not unitless($point) and not $direction == false and $direction == 'from' {
+      @media // Custom
+      only screen and (min-width: #{$point}),
+      only screen and (min-device-width: #{$point})
+      {
+        @content;
+      }
+    }
+  }
+}
+
+// // Usage
+// @include breakpoint(640px 1024px, 'from-to') {
+//   // content code here will append styles
+//   // for all devices that can display 640px but not less
+//   // and devices that can display not more that 1024px
+// }
+
+// @include breakpoint(640px, 'from') {
+//   // content code here will append styles
+//   // for all devices that can display more than 640px but not less
+// }
+
+// @include breakpoint(640px, 'to') {
+//   // content code here will append styles
+//   // for all devices that can display less then 640px but not more
+
+//   // it's the same mixin as lonely `breakpoint(640px)`
+//   // except that here we know exactly what range is defined
+// }

@@ -1,0 +1,46 @@
+.orders
+  width: 100%
+  max-width: 865px
+  min-height: 350px
+  position: relative
+  margin-bottom: 90px
+  margin-left: auto
+  z-index: 10
+
+  .orders-layout
+    width: 100%
+    max-width: 802px
+    margin-left: auto
+
+    .title
+      display: block
+      position: relative
+      color: #000
+      font-family: $fontIntroScript
+      font-size: 33px
+      line-height: 33px
+      margin: 65px auto 40px
+      text-align: center
+      text-transform: inherit
+
+    .no-result
+      font-size: 22px
+      font-weight: 400
+      text-align: center
+
+  .button-toggle-side
+    position: absolute
+    top: 0
+    left: 0
+    cursor: pointer
+    visibility: hidden
+
+    svg
+      width: 31px
+      height: 33px
+
+  @include media-breakpoint-down(md)
+    margin-right: auto
+
+    .button-toggle-side
+      visibility: visible

@@ -1,0 +1,41 @@
+#header
+	max-width: inherit
+	position: absolute
+	top: 0
+	padding: 55px 0 12px
+	color: $clrBaseLight
+	background: transparent
+	z-index: 50
+
+	.menu
+		margin-top: 3px
+
+	@include media-breakpoint-down(md)
+		text-align: center
+		
+		.phone
+			margin: 0
+			padding: 0
+			text-align: center
+
+		.logo
+			margin: 30px 0
+			
+		.menu
+			max-width: 240px
+			margin: 0 auto
+
+		.shopping-cart
+			flex: 0 0 64px
+
+			.cart
+				left: 50%
+				transform: translate(-50%, 0)
+
+				&:after
+					right: 20%
+
+	@include media-breakpoint-down(xs)
+		.phone
+			max-width: 240px
+			margin: auto
