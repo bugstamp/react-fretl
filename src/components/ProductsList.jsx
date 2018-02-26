@@ -9,9 +9,9 @@ import { addToCart } from '../actions/';
 function ProductsList({ products, buy }) {
   return (
     <div className="products-list">
-      {products.map(product => (
+      {products.map((product, index) => (
         <Product
-          key={product.productId}
+          key={index}
           product={product}
           buy={(id, order) => buy(id, order)}
         />),

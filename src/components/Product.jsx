@@ -118,7 +118,9 @@ class Product extends Component {
             <button
               className="dec update-value"
               onClick={() => this.updateInput({ type: 'dec' })}
-            >-</button>
+            >
+            -
+            </button>
             <div className="input">
               <label htmlFor="product-value">
                 <form onSubmit={this.handleSubmit}>
@@ -138,7 +140,9 @@ class Product extends Component {
             <button
               className="inc update-value"
               onClick={() => this.updateInput({ type: 'inc' })}
-            >+</button>
+            >
+            +
+            </button>
           </div>
           <ProductButton onClick={this.addtoCart}>Добавить в корзину</ProductButton>
           <NavLink
