@@ -36,8 +36,8 @@ const HTML_FILE = path.join(PUBLIC_DIR, './index.html');
 const DEFAULT_PORT = config.get('port');
 const sessionConfig = config.get('session');
 
-if (__ENV__ === 'production')
-  db.loadProducts();
+// if (__ENV__ === 'production')
+//   db.loadProducts();
 
 app.set('port', process.env.PORT || DEFAULT_PORT);
 
