@@ -10,9 +10,9 @@ import {
 } from './models/';
 
 export default {
-	loadProducts,
+  loadProducts,
   sessionStore,
-	Product,
+  Product,
   User,
   Cart
 };

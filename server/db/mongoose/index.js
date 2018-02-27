@@ -9,8 +9,8 @@ const dbOptions = config.get('mongoose:options')
 
 mongoose.connect(dbUri, dbOptions, err => {
   if (err) {
+    logger.data('Couldn\'t connected to database');
     logger.error(err.stack);
-    logger.data('Could not connected to database');
     return;
   };
     

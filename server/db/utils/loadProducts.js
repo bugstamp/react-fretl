@@ -12,12 +12,12 @@ export default async () => {
 
   Product.remove({}, (err, result) => {
   	if (err) {
-  		log.data('Shop isn\'t droped');
+  		log.data('Couldn\'t drop shop');
   		log.error(err.stack);
   		return;
   	}			
 
-		log.data('Shop is droped');
+		log.data('Shop is dropped');
 
 		const responses = products.map(async (product) => {
 			try {
@@ -45,10 +45,10 @@ export default async () => {
 
 		Promise.all(responses)
 			.then(() => {
-				log.data(`Products are loaded! All - ${responses.length}`);
+				log.data(`Products are updated and loaded! All - ${responses.length}`);
 			})
 			.catch((e) => {
-				log.data('Products aren\'t loaded!');
+				log.data('Couldn\'t load products!');
 				log.error(e.stack);
 				return;
 			});
