@@ -1,7 +1,6 @@
 import onHeaders from 'on-headers';
 import colors from 'colors';
 
-import { __ENV__ } from '../app';
 import logger from '../log';
 
 function getTimeColor(time) {

@@ -28,18 +28,32 @@ const configLevels = {
   }
 }
 
+const myTransports = global.__ENV__ !== 'production' ?
+  [
+    new transports.Console(),
+    new transports.File({
+      filename: 'server/log/errors.log',
+      level: 'error'
+    })
+  ]
+  :
+  [
+    new transports.File({
+      filename: 'server/log/info.log'
+    }),
+    new transports.File({
+      filename: 'server/log/errors.log',
+      level: 'error'
+    })
+  ];
+
 const logger = createLogger({
   levels: configLevels.levels,
   format: combine(
     colorize(),
     myFormat
   ),
-  transports: [
-    new transports.Console(),
-    new transports.File({
-      filename: 'server/log/errors.log',
-      level: 'error'
-    })]
+  transports: myTransports
 });
 
 export default logger;
