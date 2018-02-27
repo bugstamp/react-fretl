@@ -5,9 +5,8 @@ import asyncMiddleware from './asyncMiddleware';
 
 export default asyncMiddleware(async (req, res, next) => {
   if (!req.user || !req.user.auth) {
-    if (!req.session.cart) {
+    if (!req.session.cart)
       req.session.cart = [];
-    }
 
     async function isItemExist(productId) {
       return req.session.cart.some(item => item.productId === productId);
@@ -26,7 +25,10 @@ export default asyncMiddleware(async (req, res, next) => {
         try {
           const product = await db.Product.getProductById(item.productId);
 
-          return Promise.resolve({ ...product, order: item.order });
+          return Promise.resolve({ 
+            ...product, 
+            order: item.order 
+          });
         } catch (e) {
           return Promise.reject(e);
         }
@@ -38,9 +40,12 @@ export default asyncMiddleware(async (req, res, next) => {
 
     async function updateItem(productId, order) {
       return req.session.cart.map(item => {
-        if (item.productId === productId) {
-          return { ...item, order: item.order + order };
-        }
+        if (item.productId === productId)
+          return { 
+            ...item, 
+            order: item.order + order 
+          };
+
         return item;
       });
     }
@@ -48,18 +53,22 @@ export default asyncMiddleware(async (req, res, next) => {
     async function updateItemOrder(productId, type) {
       if (type === 'INCREMENT') {
         return req.session.cart.map(item => {
-          if (item.productId === productId) {
-            return { ...item, order: item.order + 1};
-          }
+          if (item.productId === productId)
+            return { 
+              ...item, 
+              order: item.order + 1
+            };
 
           return item;
         });
       } else if (type === 'DECREMENT') {
         return req.session.cart.map(item => {
           if (item.productId === productId) {
-            if (item.order > 1) {
-              return { ...item, order: item.order - 1};
-            }
+            if (item.order > 1)
+              return { 
+                ...item, 
+                order: item.order - 1
+              };
            
             return item;
           }
@@ -76,9 +85,8 @@ export default asyncMiddleware(async (req, res, next) => {
         try {
           const { cart } = req.session;
 
-          if (cart.length === 0) {
+          if (cart.length === 0)
             return res.send(cart);
-          }
 
           const cartItems = await getItems();
 
@@ -96,14 +104,20 @@ export default asyncMiddleware(async (req, res, next) => {
           } else {
             req.session.cart = [ 
               ...req.session.cart, 
-              { productId, order } 
+              { 
+                productId, 
+                order 
+              } 
             ];
           }
 
           const product = await db.Product.getProductById(productId);
           const item = await getItem(productId);
 
-          return res.send({ ...product, order: item.order });
+          return res.send({ 
+            ...product, 
+            order: item.order 
+          });
         } catch (e) {
           throw e;
         } 
@@ -122,10 +136,11 @@ export default asyncMiddleware(async (req, res, next) => {
       }
       case 'DELETE': {
         try {
-          const { id } = req.params;
+          let { id } = req.params;
+          id = Number(id)
 
-          req.session.cart = await removeItem(Number(id));
-          const result = !await isItemExist(Number(id));
+          req.session.cart = await removeItem(id);
+          const result = !await isItemExist(id);
           
           return res.send({ result });       
         } catch (e) {
