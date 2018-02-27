@@ -11,8 +11,8 @@ function LoginSection() {
             <div className="layout">
               <h1>Ваша учетная запись создана!</h1>
               <p>Поздравляем! Ваш Личный Кабинет был успешно создан</p>
-              <div className="button go-home">
-                <NavLink to="/">Продолжить</NavLink>
+              <div className="button-go-home">
+                <NavLink className="button" to="/">Продолжить</NavLink>
               </div>
             </div>
           </Col>

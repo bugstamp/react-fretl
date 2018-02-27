@@ -42,7 +42,7 @@ class FormAuth extends Component {
 
       return data;
     } catch (e) {
-      throw e;
+      return e;
     }
   }
 
@@ -159,7 +159,13 @@ class FormAuth extends Component {
           <FormButtonSubmit checking={logging.pending} text="Ввойти" />
         </FormGroup>
         <div className="form-footer">
-          <NavLink className="link" to="/register">Зарегистрироваться</NavLink>
+          <NavLink
+            to="/register"
+            onClick={toggleModalAuth}
+            className="link"
+          >
+            Зарегистрироваться
+          </NavLink>
         </div>
       </AvForm>
     );

@@ -9,7 +9,7 @@ class Product extends Component {
     super(props);
 
     const { price, value } = this.props.product;
-
+    console.log(this.props.product);
     this.state = {
       price: price.toFixed(2),
       value,

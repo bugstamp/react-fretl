@@ -15,9 +15,7 @@ class SignInLink extends Component {
     this.toggleModalAuth = this.toggleModalAuth.bind(this);
   }
 
-  toggleModalAuth(e) {
-    if (e) e.preventDefault();
-
+  toggleModalAuth() {
     this.setState({
       modalAuth: !this.state.modalAuth,
     });
@@ -28,8 +26,7 @@ class SignInLink extends Component {
     const { user, requestUserAuth, checkUserLogin } = this.props;
 
     return (
-      <a
-        href="/"
+      <button
         onClick={this.toggleModalAuth}
         className="link link-sign-in"
       >
@@ -43,7 +40,7 @@ class SignInLink extends Component {
           requestUserAuth={requestUserAuth}
           checkUserLogin={checkUserLogin}
         />
-      </a>
+      </button>
     );
   }
 }

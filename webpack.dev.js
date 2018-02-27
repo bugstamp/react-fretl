@@ -89,8 +89,8 @@ module.exports = {
 					fallback: 'style-loader',
 					use: [
 						'css-loader',
-						'resolve-url-loader', 
-						'sass-loader', 
+            'resolve-url-loader',
+            'sass-loader',
 						'postcss-loader',	
 					],
 					publicPath: '../../'
