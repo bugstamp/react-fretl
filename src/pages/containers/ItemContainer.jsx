@@ -2,17 +2,18 @@ import { connect } from 'react-redux';
 
 import Item from '../components/Item';
 
-import { getProductsForItemPage, addToCart } from '../../actions/';
+import { getProductsForItemPage, addToCart } from '../../actions';
+import { shuffleProducts } from '../../reducers';
 
-function mapStateToProps({ shop }, { match }) {
+function mapStateToProps(state, { match }) {
   const { category, id } = match.params;
-  const { loading, products, item } = shop;
+  const { loading, item } = state.shop;
 
   return ({
     category,
     id,
     loading,
-    products,
+    products: shuffleProducts(state),
     item,
   });
 }
