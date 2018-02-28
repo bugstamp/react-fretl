@@ -55,6 +55,7 @@ const items = (state = initialState.items, action) => {
     case USER_AUTH:
     case REG_SUCCESS:
     case LOGIN_SUCCESS:
+    case LOGOUT_SUCCESS:
       return action.cart;
 
     case GET_CART:
@@ -99,7 +100,6 @@ const items = (state = initialState.items, action) => {
 export default (state = initialState, action) => {
   switch (action.type) {
     case CHECKOUT:
-    case LOGOUT_SUCCESS:
       return initialState;
 
     default:

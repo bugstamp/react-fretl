@@ -146,9 +146,9 @@ export function requestUserLogout() {
 
     try {
       const res = await axios.delete('/api/auth');
-      const { user, cart } = res.data;
+      const cart = res.data;
 
-      dispatch({ type: LOGOUT_SUCCESS, user, cart });
+      dispatch({ type: LOGOUT_SUCCESS, cart });
       // Redirect to
       return dispatch(push('/logout'));
     } catch (e) {
