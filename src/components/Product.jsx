@@ -9,7 +9,7 @@ class Product extends Component {
     super(props);
 
     const { price, value } = this.props.product;
-    console.log(this.props.product);
+
     this.state = {
       price: price.toFixed(2),
       value,
@@ -24,9 +24,15 @@ class Product extends Component {
     this.addtoCart = this.addtoCart.bind(this);
   }
 
-  // Reset order in items page
-  componentWillReceiveProps() {
-    this.setState({ order: 1 });
+  // Reset state
+  componentWillReceiveProps(nextProps) {
+    const { price, value } = nextProps.product;
+
+    this.setState({
+      price: price.toFixed(2),
+      value,
+      order: 1,
+    });
   }
 
   getOrder(action) {
@@ -45,12 +51,12 @@ class Product extends Component {
 
   validateValue() {
     const { value: defValue } = this.props.product;
-    const { value } = this.state;
+    const { value: currentValue } = this.state;
 
-    if (value < defValue) {
+    if (currentValue < defValue) {
       return defValue;
     }
-    return (value / defValue).toFixed(0) * defValue;
+    return (currentValue / defValue).toFixed(0) * defValue;
   }
 
   handleChange(e) {
