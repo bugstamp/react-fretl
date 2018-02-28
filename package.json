@@ -1,6 +1,6 @@
 {
-  "name": "react-webpack",
-  "version": "1.0.0",
+  "name": "react-fretl",
+  "version": "0.0.2",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
