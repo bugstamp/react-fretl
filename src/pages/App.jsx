@@ -22,7 +22,7 @@ class App extends Component {
     const { checking, loading } = this.props;
 
     // Preloader props
-    const visible = (!checking.done && checking.pending) || loading.pending;
+    const visible = checking.pending || loading.pending;
     const text = checking.pending ?
       'Проверка авторизации'
       :
