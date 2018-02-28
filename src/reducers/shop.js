@@ -68,6 +68,24 @@ const item = (state = initialState.item, action) => {
   }
 };
 
+export function shuffleProducts(arrayOfProducts, subtractId) {
+  const array = arrayOfProducts.filter(product => product.productId !== subtractId);
+
+  let index = array.length;
+  let temporaryValue;
+  let randomIndex;
+
+  while (index) {
+    randomIndex = Math.floor(Math.random() * (index -= 1));
+
+    temporaryValue = array[index];
+    array[index] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
 export default (state = initialState, action) => {
   switch (action.type) {
     case REQUEST_SHOP:
