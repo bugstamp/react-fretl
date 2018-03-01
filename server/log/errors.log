@@ -2382,3 +2382,19 @@
     at step (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\routers\auth.js:33:191)
     at C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\routers\auth.js:33:361
     at <anonymous>
+2018-03-01 02:56:01 [31merror[39m: POST /api/auth  500  [32m130.225[39mms  reqId=6
+2018-03-01 02:56:01 [31merror[39m: Error: No callback function was given.
+    at C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\middlewares/asyncMiddleware.js:6:24
+    at <anonymous>
+2018-03-01 02:56:49 [31merror[39m: POST /api/auth  500  [32m139.432[39mms  reqId=6
+2018-03-01 02:56:49 [31merror[39m: Error: No callback function was given.
+    at C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\middlewares/asyncMiddleware.js:6:24
+    at <anonymous>
+2018-03-01 03:05:18 [31merror[39m: POST /api/auth  500  [32m143.526[39mms  reqId=6
+2018-03-01 03:05:18 [31merror[39m: Error: No callback function was given.
+    at C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\middlewares/asyncMiddleware.js:6:24
+    at <anonymous>
+2018-03-01 03:19:24 [31merror[39m: POST /api/auth  500  [32m129.837[39mms  reqId=7
+2018-03-01 03:19:24 [31merror[39m: Error: No callback function was given.
+    at C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\middlewares/asyncMiddleware.js:6:24
+    at <anonymous>

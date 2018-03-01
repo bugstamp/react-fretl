@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcrypt-nodejs';
 import jwt from 'jsonwebtoken';
 import boom from 'boom';
 import moment from 'moment';
@@ -9,49 +9,85 @@ import config from '../../config';
 const jwtSecret = config.get('jwt:secret');
 
 const userSchema = new mongoose.Schema({
-	fullname: {
-		type: String,
+  fullname: {
+    type: String,
     required: true
-	},
-	phone: {
-		type: String,
+  },
+  phone: {
+    type: String,
     required: true
-	},
-	address: {
-		type: String,
+  },
+  address: {
+    type: String,
     required: true
-	},
-	email: {
-		type: String,
-		unique: true,
-		required: true
-	},
-	password: {
-		type: String,
-		required: true
-	},
+  },
+  email: {
+    type: String,
+    unique: true,
+    required: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
   purchases: {
     type: Array,
     default: []
   },
-	created: {
-		type: Date,
-		require: true,
-		default: moment().format('YYYY-MM-DD hh:mm:ss')
-	}
+  created: {
+    type: Date,
+    require: true,
+    default: moment().format('YYYY-MM-DD hh:mm:ss')
+  }
 });
 
+function genSalt() {
+  return new Promise((res, rej) => {
+    bcrypt.genSalt(Math.random(), (err, salt) => {
+      if (err)
+        rej(err);
+      
+      res(salt);
+    });
+  });
+}
+
+function hashPassword(password, salt) {
+  return new Promise((res, rej) => {
+    bcrypt.hash(password, salt, null, (err, hash) => {
+      if (err)
+        rej(err);
+     
+      res(hash)
+    });
+  });
+}
+
+function comparePassword(password, hash) {
+  return new Promise((res, rej) => {
+    bcrypt.compare(password, hash, (err, result) => {
+      if (err)
+        rej(err);
+     
+      res(result)
+    });
+  });
+}
+
 userSchema.pre('save', async function(next) {
-	if (!this.isModified('password')) 
+  if (!this.isModified('password')) 
     return next();
 
-	try {
-		this.password = await this.hashPassword(this.password);
+  try {
+    const salt = await genSalt();
+    const hash = await hashPassword(this.password, salt);
 
-		next();
-	} catch (e) {
-		next(e);
-	}
+    this.password = hash;
+
+    next();
+  } catch (e) {
+    next(e);
+  }
 });
 
 userSchema.methods.generatePassword = function(length) {
@@ -65,20 +101,9 @@ userSchema.methods.generatePassword = function(length) {
   return pwd;
 }
 
-userSchema.methods.hashPassword = async function(password) {
-  try {
-    const salt = await bcrypt.genSalt(Math.random());
-    const hash = await bcrypt.hash(password, salt);
-
-    return hash;
-  } catch (e) {
-    throw e;
-  }
-}
-
 userSchema.methods.checkPassword = async function(password) {
   try {
-    const res = await bcrypt.compare(password, this.password);
+    const res = await comparePassword(password, this.password);
     
     return res;
   } catch (e) {
@@ -88,11 +113,14 @@ userSchema.methods.checkPassword = async function(password) {
 
 userSchema.methods.updateUserPassword = async function(password) {
   try {
-    const hash = await this.hashPassword(password);
-    
+    const salt = await genSalt();
+    const hash = await hashPassword(password, salt);
+
     const user = await User.findOneAndUpdate(
       { _id: this._id },
-      { 'password' : hash },
+      { 
+        'password' : hash 
+      },
       { 'new': true }
     );
 
@@ -129,7 +157,10 @@ userSchema.methods.updateUserInfo = async function(form) {
 
     const user = await User.findOneAndUpdate(
       { _id: this._id },
-      { email, ...rest },
+      { 
+        email, 
+        ...rest 
+      },
       { 'new': true }
     );
 
