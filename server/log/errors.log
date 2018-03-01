@@ -2334,3 +2334,51 @@
 2018-03-01 11:37:21 [31merror[39m: Error: No callback function was given.
     at C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\middlewares/asyncMiddleware.js:6:24
     at <anonymous>
+2018-03-01 12:20:52 [31merror[39m: POST /api/auth  500  [32m141.129[39mms  reqId=9
+2018-03-01 12:20:52 [31merror[39m: Error: No callback function was given.
+    at C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\middlewares/asyncMiddleware.js:6:24
+    at <anonymous>
+2018-03-01 12:21:32 [31merror[39m: POST /api/auth  500  [32m136.332[39mms  reqId=6
+2018-03-01 12:21:32 [31merror[39m: Error: No callback function was given.
+    at C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\middlewares/asyncMiddleware.js:7:24
+    at <anonymous>
+2018-03-01 12:23:56 [31merror[39m: POST /api/auth  500  [32m142.065[39mms  reqId=6
+2018-03-01 12:23:56 [31merror[39m: Error: No callback function was given.
+    at C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\middlewares/asyncMiddleware.js:6:24
+    at <anonymous>
+2018-03-01 12:28:16 [31merror[39m: GET /api/auth/forgot?email=grischenkokiril@gmail.com  500  [32m103.029[39mms  reqId=15
+2018-03-01 12:28:16 [31merror[39m: ReferenceError: next is not defined
+    at model._callee4$ (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\db\models/user.js:100:5)
+    at tryCatch (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\node_modules\babel-polyfill\node_modules\regenerator-runtime\runtime.js:65:40)
+    at Generator.invoke [as _invoke] (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\node_modules\babel-polyfill\node_modules\regenerator-runtime\runtime.js:303:22)
+    at Generator.prototype.(anonymous function) [as throw] (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\node_modules\babel-polyfill\node_modules\regenerator-runtime\runtime.js:117:21)
+    at step (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\db\models\user.js:37:191)
+    at C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\db\models\user.js:37:402
+    at <anonymous>
+2018-03-01 12:35:36 [31merror[39m: GET /api/auth/forgot?email=grischenkokiril@gmail.com  500  [32m503.793[39mms  reqId=6
+2018-03-01 12:35:36 [31merror[39m: ReferenceError: next is not defined
+    at model._callee4$ (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\db\models/user.js:100:5)
+    at tryCatch (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\node_modules\babel-polyfill\node_modules\regenerator-runtime\runtime.js:65:40)
+    at Generator.invoke [as _invoke] (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\node_modules\babel-polyfill\node_modules\regenerator-runtime\runtime.js:303:22)
+    at Generator.prototype.(anonymous function) [as throw] (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\node_modules\babel-polyfill\node_modules\regenerator-runtime\runtime.js:117:21)
+    at step (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\db\models\user.js:37:191)
+    at C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\db\models\user.js:37:402
+    at <anonymous>
+2018-03-01 12:44:54 [31merror[39m: GET /api/auth/forgot?email=grischenkokiril@gmail.com  500  [32m123.704[39mms  reqId=6
+2018-03-01 12:44:54 [31merror[39m: ReferenceError: next is not defined
+    at model._callee2$ (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\db\models/user.js:102:5)
+    at tryCatch (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\node_modules\babel-polyfill\node_modules\regenerator-runtime\runtime.js:65:40)
+    at Generator.invoke [as _invoke] (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\node_modules\babel-polyfill\node_modules\regenerator-runtime\runtime.js:303:22)
+    at Generator.prototype.(anonymous function) [as next] (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\node_modules\babel-polyfill\node_modules\regenerator-runtime\runtime.js:117:21)
+    at step (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\db\models\user.js:37:191)
+    at C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\db\models\user.js:37:437
+    at new Promise (<anonymous>)
+    at model.<anonymous> (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\db\models\user.js:37:99)
+    at model.updateUserPassword (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\db\models/user.js:90:1)
+    at _callee2$ (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\routers/auth.js:28:29)
+    at tryCatch (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\node_modules\babel-polyfill\node_modules\regenerator-runtime\runtime.js:65:40)
+    at Generator.invoke [as _invoke] (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\node_modules\babel-polyfill\node_modules\regenerator-runtime\runtime.js:303:22)
+    at Generator.prototype.(anonymous function) [as next] (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\node_modules\babel-polyfill\node_modules\regenerator-runtime\runtime.js:117:21)
+    at step (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\routers\auth.js:33:191)
+    at C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\routers\auth.js:33:361
+    at <anonymous>
