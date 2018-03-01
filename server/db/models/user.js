@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcrypt/bcrypt';
 import jwt from 'jsonwebtoken';
 import boom from 'boom';
 import moment from 'moment';
