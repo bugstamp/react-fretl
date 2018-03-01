@@ -78,9 +78,9 @@ userSchema.methods.hashPassword = async function(password) {
 
 userSchema.methods.checkPassword = async function(password) {
   try {
+    console.log(await bcrypt.compare(password, this.password));
     const res = await bcrypt.compare(password, this.password);
-    
-    return res;
+    return res; 
   } catch (e) {
     throw e;
   }
