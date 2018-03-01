@@ -8,7 +8,6 @@ import sendNewPassword from './utils/sendNewPassword';
 
 const router = express.Router();
 
-// Checking and sending user login data which his had saved
 router.get('/api/auth/remember', asyncMiddleware(async (req, res) => {
   if (!req.session.remember) {
     throw boom.notFound();
@@ -17,7 +16,6 @@ router.get('/api/auth/remember', asyncMiddleware(async (req, res) => {
   res.send(req.session.remember);
 }));
 
-// Creating new password if user forget his password
 router.get('/api/auth/forgot', asyncMiddleware(async (req, res) => {
   const { email } = req.query;
   const user = await db.User.findOne({ email });
@@ -34,7 +32,6 @@ router.get('/api/auth/forgot', asyncMiddleware(async (req, res) => {
   res.send({ message: isSuccess });
 }));
 
-// Checking user authorization and get user
 router.get('/api/auth', asyncMiddleware(async (req, res) => {
   if (!req.user || !req.user.auth) {
     throw boom.unauthorized('Пользователь не авторизован');
@@ -48,7 +45,6 @@ router.get('/api/auth', asyncMiddleware(async (req, res) => {
   res.send({ user: cleanUser(user), cart: items});
 })); 
 
-// Authorization user
 router.post('/api/auth', asyncMiddleware(async (req, res) => {
   const { session } = req;
   const { form, remember }= req.body;
@@ -73,7 +69,6 @@ router.post('/api/auth', asyncMiddleware(async (req, res) => {
   res.send({ user: cleanUser(user), cart: items});
 }));
 
-// Logout
 router.delete('/api/auth', asyncMiddleware(async (req, res) => {
   const { session } = req;
 
