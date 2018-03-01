@@ -2314,3 +2314,7 @@
     at Object.require.extensions.(anonymous function) [as .js] (C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\node_modules\babel-register\lib\node.js:154:7)
     at Module.load (module.js:554:32)
     at tryModuleLoad (module.js:497:12)
+2018-03-01 10:38:59 [31merror[39m: POST /api/auth  500  [32m566.248[39mms  reqId=9
+2018-03-01 10:38:59 [31merror[39m: Error: No callback function was given.
+    at C:\Users\kirilka\Google Диск\web\st3\react\react-fretl\server\middlewares/asyncMiddleware.js:6:24
+    at <anonymous>
