@@ -1,0 +1,28 @@
+{
+	"name": "Fretl",
+	"port": 3000,
+	"mail": {
+		"user": "fretl.best@gmail.com",
+		"password": "adminadmin"
+	},
+	"mongoose": {
+		"uri": "mongodb://admin:fretlTheBest@ds151348.mlab.com:51348/fretl",
+		"options": {
+		}
+	},
+	"session": {
+		"key": "session",
+		"secret": "FretlTheBest",
+		"resave": true,
+		"saveUninitialized": true,
+		"cookie": {
+			"path": "/",
+			"secure": false,
+			"httpOnly": true,
+			"maxAge": null
+		}
+	},
+	"jwt": {
+		"secret": "FretlSecurity"
+	}
+}
