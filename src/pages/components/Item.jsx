@@ -31,7 +31,7 @@ class Item extends Component {
   render() {
     const { category, products, item, addToCart } = this.props;
     const topic = categoryTopics[category];
-    console.log('render');
+
     return (
       <DocumentTitle title={item.name || topic.title} >
         <div className="item-page">
