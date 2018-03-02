@@ -8,8 +8,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const apiUrl = 'http://localhost:3000';
-
 module.exports = {
 	entry: {
 		'app': [
@@ -27,8 +25,7 @@ module.exports = {
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env': { 
-				NODE_ENV: JSON.stringify('production'),
-        API_URL: JSON.stringify(apiUrl),
+				NODE_ENV: JSON.stringify('production')
 			}
 		}),
 		new CleanWebpackPlugin(['public'], {

@@ -5,8 +5,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin'); 
 
-const apiUrl = 'http://localhost:3000';
-
 module.exports = {
 	entry: {
 		'app': [
@@ -27,7 +25,7 @@ module.exports = {
 		hotOnly: true,
 		historyApiFallback: true,
 		proxy: {
-			"/api": apiUrl
+			"/api": 'http://localhost:3000'
 		}
 	},
 
@@ -35,7 +33,6 @@ module.exports = {
 		new webpack.DefinePlugin({
 			'process.env': { 
 				NODE_ENV: JSON.stringify('development'),
-				API_URL: JSON.stringify(apiUrl),
 			}
 		}),
 		new webpack.LoaderOptionsPlugin({
