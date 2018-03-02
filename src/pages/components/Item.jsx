@@ -28,8 +28,27 @@ class Item extends Component {
     getProductsForItemPage(category, id);
   }
 
+  shuffleProducts() {
+    const { products, item } = this.props;
+    const array = products.filter(product => product.productId !== item.productId);
+
+    let index = array.length;
+    let temporaryValue;
+    let randomIndex;
+
+    while (index) {
+      randomIndex = Math.floor(Math.random() * (index -= 1));
+
+      temporaryValue = array[index];
+      array[index] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  }
+
   render() {
-    const { category, products, item, addToCart } = this.props;
+    const { category, item, addToCart } = this.props;
     const topic = categoryTopics[category];
 
     return (
@@ -44,7 +63,7 @@ class Item extends Component {
           <ProductsSection
             sectionId="item-products"
             title={`Другие товары по категории ${topic.title}`}
-            products={products}
+            products={this.shuffleProducts()}
             withButton={false}
           />
         </div>
