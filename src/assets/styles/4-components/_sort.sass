@@ -16,9 +16,6 @@
 		text-align: center
 		cursor: pointer
 
-		&:last-child
-			margin-right: 0
-
 		&:active,
 		&.active
 			border-color: $clrBaseOrange
@@ -42,6 +39,9 @@
 			margin-left: 14px
 			background-image: url('../../images/icon/main-sprite.png')
 
+	.down
+		margin-right: 0
+
 	.up .icon
 		background-position: -139px -81px
 
@@ -56,6 +56,7 @@
 
 		.title
 			flex-basis: 100%
+			margin-right: 0
 			margin-bottom: 25px
 
 	@include media-breakpoint-down(sm)
@@ -65,13 +66,15 @@
 		.title
 			text-align: center
 
-	@include breakpoint(400px, 'to')
-		button
-			margin-right: 15px
+	@include breakpoint(396px, 'to')
+		.up
+			order: 1
 
-			&:last-child
-				margin-right: 15px
+		.down
+			order: 2
+			margin-right: 2.5%
 
 		.abc
 			order: 3
-			margin: 15px auto 0
+			margin-top: 2.5%
+			margin-right: 0
