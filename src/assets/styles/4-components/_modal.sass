@@ -15,15 +15,14 @@
   
   .modal-close-custom
     position: absolute
-    right: -60px
+    top: 0
+    right: -55px
 
     button
       display: block
-      width: 42px
+      width: 32px
       height: 32px
       position: relative
-      right: 3px
-      margin: auto
       background-color: transparent
       cursor: pointer
 
@@ -33,6 +32,7 @@
         height: 2px
         position: absolute
         top: 15px
+        left: -3px
         background-color: #fff
         transition: $transitionEaseInOut
 
@@ -42,6 +42,17 @@
         &:nth-child(2)
           transform: rotate(-45deg)
 
-    &:hover
+    &:hover,
+    &:active
       span
         background-color: #df001b
+
+  @include media-breakpoint-down(sm)
+    .modal-close-custom
+      top: 10px
+      right: 10px
+
+      button
+        span
+          background-color: #000
+

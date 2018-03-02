@@ -44,8 +44,8 @@
 			display: none
 
 		.value
-			height: 40px
 			flex: 0 99px 
+			height: 40px
 			align-self: center
 			position: relative
 			margin-top: 0
@@ -58,20 +58,22 @@
 				padding: 0
 
 			.update-value
-				width: 10px
-				height: 10px
+				width: 15px
+				height: 15px
 				position: absolute
 				top: 11px
 				padding: 0
 				margin: 0
 				font-size: 40px
-
+				
 				&.dec
 					left: 6px
 
 				&.inc
 					right: 6px
 
+			@include breakpoint(350px, 'to')
+				margin-bottom: 13px
 
 		.button-buy
 			flex: 0 190px
@@ -124,3 +126,4 @@
 		.info
 			margin-top: 45px
 			text-align: center
+

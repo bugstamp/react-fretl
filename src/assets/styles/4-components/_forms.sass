@@ -41,14 +41,12 @@
 				color: #df001b
 
 		.form-input-wrap
-			max-width: 100%
 			position: relative
 
 			input.form-control
 				width: 100%
 				height: 55px
 				font-size: 17px
-				font-weight: normal
 				line-height: 55px
 				padding: 0
 				padding-left: 32px
@@ -58,7 +56,10 @@
 				border-color: rgba(174, 165, 159, 0.17)
 				border-radius: 50px
 				letter-spacing: 0.34px
+				box-sizing: border-box
 				transition: $transitionEaseInOut
+				// hack for ios
+				-webkit-appearance: none;
 				
 				&:focus
 					border-color: #aea59f
@@ -66,7 +67,8 @@
 				
 				&.is-invalid
 					border-color: #f06464
-
+				
+				// hack for phone-mask
 				&.phone
 					text-indent: 200%
 					white-space: nowrap
@@ -86,16 +88,6 @@
 				position: absolute
 				top: 18px
 				right: 25px
-
-			.reg-form-icon
-				position: absolute
-				top: 18px
-				right: 25px
-				font-size: 19px
-				color: #d0d0d0
-
-				&.icon-phone
-					font-size: 16px
 
 		&.check
 			display: flex
@@ -185,7 +177,8 @@
 			font-size: 22px
 
 .form
-	&.auth-form
+	&.auth-form,
+	&.forgot-form
 		.form-group
 			max-width: 370px
 
@@ -231,6 +224,16 @@
 		.form-group
 			padding-left: 30px
 
+			.reg-form-icon
+				position: absolute
+				top: 18px
+				right: 25px
+				font-size: 19px
+				color: #d0d0d0
+
+				&.icon-phone
+					font-size: 16px
+
 			&.reg-form-footer
 				display: flex
 				flex-flow: row nowrap
@@ -259,6 +262,10 @@
 			&:hover
 				color: $clrProductButtonBorder
 				background-color: #fff
+
+		@include media-breakpoint-down(md)
+			.form-group
+				padding-left: 0
 				
 	&.forgot-form
 		border-radius: 10px

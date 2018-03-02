@@ -43,7 +43,10 @@ class FormForgot extends Component {
     const { toggleModalForgot, checking } = this.props;
 
     return (
-      <AvForm onValidSubmit={this.handleSubmit} className="form modal-form forgot-form">
+      <AvForm
+        onValidSubmit={this.handleSubmit}
+        className="form modal-form forgot-form"
+      >
         <FormHeader text="Забыли пароль?" />
         <AvGroup>
           <Label for="forgottenEmail" className="form-group-label">
