@@ -139,9 +139,9 @@ class Product extends Component {
                     size={inputSize}
                     maxLength="5"
                   />
+                  {product.unit}
                 </form>
               </label>
-              {product.unit}
             </div>
             <button
               className="inc update-value"
