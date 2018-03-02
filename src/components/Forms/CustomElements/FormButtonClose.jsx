@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function FormButtonClose({ onClick }) {
   return (
     <div className="modal-close-custom">
-      <button onClick={onClick}>
+      <button type="button" onClick={onClick}>
         <span />
         <span />
       </button>

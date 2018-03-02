@@ -156,7 +156,10 @@ class FormAuth extends Component {
           </a>
         </AvGroup>
         <FormGroup>
-          <FormButtonSubmit checking={logging.pending} text="Ввойти" />
+          <FormButtonSubmit
+            checking={logging.pending}
+            text="Ввойти"
+          />
         </FormGroup>
         <div className="form-footer">
           <NavLink
