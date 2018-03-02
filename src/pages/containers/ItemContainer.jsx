@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Item from '../components/Item';
 
 import { getProductsForItemPage, addToCart } from '../../actions';
-// import { shuffleProducts } from '../../reducers';
 
 function mapStateToProps(state, { match }) {
   const { category, id } = match.params;
