@@ -32,7 +32,6 @@ class SearchForm extends Component {
           <i className="icon" />
           <input
             type="text"
-            name="name"
             placeholder="Поиск по товарам"
             ref={(input) => { this.name = input; }}
             onChange={this.handleChange}
