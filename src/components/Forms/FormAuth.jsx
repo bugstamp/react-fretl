@@ -91,6 +91,7 @@ class FormAuth extends Component {
         className="form modal-form auth-form"
         onValidSubmit={this.handleSubmit}
       >
+        <input type="hidden" value="prayer" />
         <FormHeader text="Здравствуйте!" />
         <AvGroup>
           <Label for="email" className="form-group-label">
