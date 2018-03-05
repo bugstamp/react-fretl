@@ -222,7 +222,11 @@ class FormReg extends Component {
             </Col>
           </Row>
           <FormGroup>
-            <FormButtonSubmit checking={loading.pending} text={buttonText} />
+            <FormButtonSubmit
+              checking={loading.pending}
+              text={buttonText}
+              className="recursive-hover"
+            />
           </FormGroup>
         </div>
       </AvForm>

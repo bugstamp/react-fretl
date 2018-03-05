@@ -68,11 +68,27 @@ button,
 	border-radius: 50px
 	cursor: pointer
 	transition: $transitionRapidly
-	
-	&:hover
-		color: #fff
-		background-color: $clrProductButtonHover
-		border-bottom: 2px solid $clrProductButtonHover
+
+	&.no-effect
+		pointer-events: none
+
+	@include media-breakpoint-up(xl)	
+		&:hover
+			background-color: $clrProductButtonHover
+
+		&.recursive-hover
+			&:hover
+				color: $clrProductButton
+				background-color: #fff
+			
+	@include media-breakpoint-down(xl)
+		&:active
+			background-color: $clrProductButtonHover
+			
+			&.recursive-hover
+				&:active
+					color: $clrProductButton
+					background-color: #fff
 
 .link
 	text-decoration: underline

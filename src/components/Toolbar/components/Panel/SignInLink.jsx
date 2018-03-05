@@ -27,8 +27,8 @@ class SignInLink extends Component {
 
     return (
       <button
-        onClick={this.toggleModalAuth}
         className="link link-sign-in"
+        onClick={this.toggleModalAuth}
       >
         Войти
         <IconSignIn />
