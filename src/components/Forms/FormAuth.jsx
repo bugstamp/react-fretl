@@ -60,6 +60,8 @@ class FormAuth extends Component {
   }
 
   handleChange(e) {
+    if (!e.isTrusted) { return; }
+
     const { id, value } = e.target;
 
     this.setState({
@@ -102,7 +104,6 @@ class FormAuth extends Component {
               value={email}
               placeholder="Ваша почта"
               onChange={this.handleChange}
-              autoComplete="off"
               validate={{ email: true }}
               required
             />
@@ -126,7 +127,6 @@ class FormAuth extends Component {
               value={password}
               placeholder="Ваш пароль"
               onChange={this.handleChange}
-              autoComplete="off"
               maxLength="10"
               validate={{ minLength: { value: 6 } }}
               required
