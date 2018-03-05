@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import { Modal } from 'reactstrap';
 
 import FormAuth from '../Forms/FormAuth';
+
 import ModalForgot from './ModalForgot';
+import ModalCloseButton from './ModalCloseButton';
 
 class ModalAuth extends Component {
   constructor(props) {
@@ -31,6 +33,7 @@ class ModalAuth extends Component {
     return (
       isOpen ?
         <Modal isOpen={isOpen} toggle={toggle} className="auth-modal">
+          <ModalCloseButton onClick={toggle} />
           <FormAuth
             toggleModalAuth={toggle}
             toggleModalForgot={this.toggleModalForgot}

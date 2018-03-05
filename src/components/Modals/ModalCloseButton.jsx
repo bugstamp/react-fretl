@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function FormButtonClose({ onClick }) {
+function ModalCloseButton({ onClick }) {
   return (
     <div className="modal-close-custom">
-      <button type="button" onClick={onClick}>
+      <button onClick={onClick}>
         <span />
         <span />
       </button>
@@ -12,8 +12,8 @@ function FormButtonClose({ onClick }) {
   );
 }
 
-FormButtonClose.propTypes = {
+ModalCloseButton.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
 
-export default FormButtonClose;
+export default ModalCloseButton;

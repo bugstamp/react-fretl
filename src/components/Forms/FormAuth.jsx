@@ -6,7 +6,6 @@ import { NavLink } from 'react-router-dom';
 
 import {
   FormHeader,
-  FormButtonClose,
   FormButtonSubmit,
   FormCheckBox,
   FormInvalidFeedback,
@@ -89,7 +88,6 @@ class FormAuth extends Component {
 
     return (
       <AvForm onValidSubmit={this.handleSubmit} className="form modal-form auth-form">
-        <FormButtonClose onClick={toggleModalAuth} />
         <FormHeader text="Здравствуйте!" />
         <AvGroup>
           <Label for="email" className="form-group-label">
@@ -104,6 +102,7 @@ class FormAuth extends Component {
               value={email}
               placeholder="Ваша почта"
               onChange={this.handleChange}
+              autoComplete="off"
               validate={{ email: true }}
               required
             />
@@ -127,6 +126,7 @@ class FormAuth extends Component {
               value={password}
               placeholder="Ваш пароль"
               onChange={this.handleChange}
+              autoComplete="off"
               maxLength="10"
               validate={{ minLength: { value: 6 } }}
               required

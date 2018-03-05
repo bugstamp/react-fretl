@@ -1,10 +1,10 @@
 .modal-open
-  height: 100vh
+  max-height: 100%
+  position: fixed
 
   .modal
-    height: 100%
     overflow-y: scroll
-    -webkit-overflow-scrolling: auto;
+    -webkit-overflow-scrolling: touch;
 
 .modal-dialog
   &.auth-modal
@@ -15,16 +15,18 @@
       border-radius: 0
       background-color: transparent
 
-.modal-form
-  position: relative
-  padding: 0 20px
-  background-color: #fff
-  border-radius: 10px 10px 0 0
+  .modal-form
+    position: relative
+    padding: 0 20px
+    background-color: #fff
+    border-radius: 10px 10px 0 0
   
   .modal-close-custom
     position: absolute
     top: 0
-    right: -55px
+    right: -60px
+    cursor: pointer
+    z-index: 1050
 
     button
       display: block
@@ -32,7 +34,6 @@
       height: 32px
       position: relative
       background-color: transparent
-      cursor: pointer
 
       span
         display: block
@@ -53,7 +54,7 @@
     &:hover,
     &:active
       span
-        background-color: #df001b
+        background-color: $clrBaseRed
 
   @include media-breakpoint-down(sm)
     .modal-close-custom
@@ -63,4 +64,3 @@
       button
         span
           background-color: #000
-
