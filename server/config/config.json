@@ -19,7 +19,7 @@
 			"path": "/",
 			"secure": false,
 			"httpOnly": true,
-			"maxAge": 1.209600000
+			"maxAge": 1209600000
 		}
 	},
 	"jwt": {

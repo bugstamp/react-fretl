@@ -60,8 +60,6 @@ class FormAuth extends Component {
   }
 
   handleChange(e) {
-    if (!e.isTrusted) { return; }
-
     const { id, value } = e.target;
 
     this.setState({
