@@ -91,8 +91,8 @@ class FormAuth extends Component {
         className="form modal-form auth-form"
         onValidSubmit={this.handleSubmit}
       >
-        <input type="hidden" value="prayer" />
         <FormHeader text="Здравствуйте!" />
+        <input type="hidden" value="hack" autoComplete="new-password" />
         <AvGroup>
           <Label for="email" className="form-group-label">
             Введите вашу почту <span>*</span> :
@@ -107,7 +107,7 @@ class FormAuth extends Component {
               placeholder="Ваша почта"
               onChange={this.handleChange}
               validate={{ email: true }}
-              autoComplete="new-password"
+              autoComplete="off"
               required
             />
             <IconEmail className="icon" />
@@ -132,6 +132,7 @@ class FormAuth extends Component {
               onChange={this.handleChange}
               validate={{ minLength: { value: 6 } }}
               maxLength="10"
+              autoComplete="off"
               required
             />
             <IconLock className="icon" />
