@@ -21,7 +21,7 @@
 		border-radius: 0
 		color: inherit
 		text-align: left
-		overflow: hidden
+		overflow: hidden 
 
 		> *
 			flex: 1 100%
@@ -44,8 +44,8 @@
 			display: none
 
 		.value
-			flex: 0 99px 
 			height: 40px
+			flex: 0 99px 
 			align-self: center
 			position: relative
 			margin-top: 0
@@ -55,7 +55,6 @@
 			border-radius: 50px
 
 			form
-				padding: 0
 				text-align: center
 
 			.update-value
@@ -73,7 +72,7 @@
 				&.inc
 					right: 6px
 
-			@include breakpoint(350px, 'to')
+			@media (max-width: 350px)
 				margin-bottom: 13px
 
 		.button-buy

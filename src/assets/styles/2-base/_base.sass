@@ -1,3 +1,6 @@
+@-ms-viewport
+	width        : device-width
+
 html, body
 	overflow-x   : hidden
 
@@ -35,6 +38,7 @@ img
 	height         : auto
 	
 input
+	padding        : 0
 	font-family    : inherit
 	color          : inherit
 	background     : none
@@ -69,24 +73,21 @@ button,
 	cursor: pointer
 	transition: $transitionRapidly
 
-	&.no-effect
-		pointer-events: none
-
 	@include media-breakpoint-up(xl)	
-		&:hover
+		&:not(.no-effect):hover
 			background-color: $clrProductButtonHover
 
 		&.recursive-hover
-			&:hover
+			&:not(.no-effect):hover
 				color: $clrProductButton
 				background-color: #fff
 			
 	@include media-breakpoint-down(xl)
-		&:active
+		&:not(.no-effect):active
 			background-color: $clrProductButtonHover
 			
 			&.recursive-hover
-				&:active
+				&:not(.no-effect):active
 					color: $clrProductButton
 					background-color: #fff
 

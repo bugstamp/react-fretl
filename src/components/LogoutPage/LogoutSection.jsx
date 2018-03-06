@@ -15,7 +15,7 @@ function LogoutSection() {
               Ваша корзина покупок была сохранена.
               Она будет восстановленна при следующем входе в Ваш Личный Кабинет</p>
               <div className="button-go-home">
-                <NavLink className="button" to="/">Продолжить</NavLink>
+                <NavLink className="button no-effect" to="/">Продолжить</NavLink>
               </div>
             </div>
           </Col>
