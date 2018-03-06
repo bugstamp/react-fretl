@@ -91,23 +91,23 @@ class FormAuth extends Component {
         className="form modal-form auth-form"
         onValidSubmit={this.handleSubmit}
         autoComplete="off"
-        role="presentation"
       >
-        <FormHeader text="Здравствуйте!" />
         <input type="hidden" value="hack" autoComplete="new-password" />
+        <FormHeader text="Здравствуйте!" />
         <AvGroup>
           <Label for="email" className="form-group-label">
             Введите вашу почту <span>*</span> :
           </Label>
           <div className="form-input-wrap">
             <AvInput
-              type="email"
+              type="text"
               name="email"
               id="email"
               ref={(input) => { this.email = input; }}
               value={email}
               placeholder="Ваша почта"
               onChange={this.handleChange}
+              autoComplete="off"
               validate={{ email: true }}
               required
             />

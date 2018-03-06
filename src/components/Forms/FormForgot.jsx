@@ -46,6 +46,7 @@ class FormForgot extends Component {
       <AvForm
         onValidSubmit={this.handleSubmit}
         className="form modal-form forgot-form"
+        autoComplete="off"
       >
         <FormHeader text="Забыли пароль?" />
         <AvGroup>
@@ -54,13 +55,14 @@ class FormForgot extends Component {
           </Label>
           <div className="form-input-wrap">
             <AvInput
-              type="email"
+              type="text"
               name="forgottenEmail"
               id="forgottenEmail"
               ref={(input) => { this.forgottenEmail = input; }}
               placeholder="Ваша почта"
               value={forgottenEmail}
               onChange={this.handleChange}
+              autoComplete="off"
               validate={{ email: true }}
               required
             />
