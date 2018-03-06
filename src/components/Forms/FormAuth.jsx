@@ -90,6 +90,8 @@ class FormAuth extends Component {
       <AvForm
         className="form modal-form auth-form"
         onValidSubmit={this.handleSubmit}
+        autoComplete="off"
+        role="presentation"
       >
         <FormHeader text="Здравствуйте!" />
         <input type="hidden" value="hack" autoComplete="new-password" />
@@ -107,7 +109,6 @@ class FormAuth extends Component {
               placeholder="Ваша почта"
               onChange={this.handleChange}
               validate={{ email: true }}
-              autoComplete="off"
               required
             />
             <IconEmail className="icon" />
@@ -132,7 +133,7 @@ class FormAuth extends Component {
               onChange={this.handleChange}
               validate={{ minLength: { value: 6 } }}
               maxLength="10"
-              autoComplete="off"
+              autoComplete="new-password"
               required
             />
             <IconLock className="icon" />
