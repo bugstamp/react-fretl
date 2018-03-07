@@ -28,12 +28,12 @@ const configLevels = {
   }
 }
 
-const infoTransport = process.env.NODE_ENV === 'production' ?
-  new transports.File({
-    filename: 'server/log/info.log'
-  })
-  :
-  new transports.Console();
+// const infoTransport = process.env.NODE_ENV === 'production' ?
+//   new transports.File({
+//     filename: 'server/log/info.log'
+//   })
+//   :
+//   new transports.Console();
 
 const logger = createLogger({
   levels: configLevels.levels,
@@ -42,7 +42,7 @@ const logger = createLogger({
     myFormat
   ),
   transports: [
-    infoTransport,
+    new transports.Console(),
     new transports.File({
       filename: 'server/log/errors.log',
       level: 'error'
