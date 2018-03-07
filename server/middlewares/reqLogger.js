@@ -4,15 +4,15 @@ import colors from 'colors';
 import logger from '../log';
 
 function getTimeColor(time) {
-  time = time.toFixed(3);
-  
+  time = time.toFixed(0);
+
   if (time > 10000) {
     return time.red;
   } else if (time > 3000) {
     return time.orange;
   }
 
-  return time.green
+  return time.green;
 }
 
 function getLevel(data) {
@@ -39,7 +39,6 @@ function logFinish(data) {
   return `${method} ${originalUrl}  ${statusCode}  ${getTimeColor(time)}ms  reqId=${reqId}`;
 }
 
-
 export default (req, res, next) => {
   const data = {};
 
@@ -47,22 +46,18 @@ export default (req, res, next) => {
   data.method = req.method;
   data.host = req.hostname;
   data.originalUrl = req.originalUrl;
-  data.ip = req.ip || req.connection.remoteAdress ||
-    (req.socket && req.socket.remoteAdress);
+  data.ip = req.ip || req.connection.remoteAdress || 
+    req.socket || req.socket.remoteAdress;
   data.userId = req.user ? req.user.userId : undefined;
+  
+  const start = process.hrtime();
 
   function debugging() {
     logger.debug(logStart(data));
   }
 
-  const start = process.hrtime();
-
   onHeaders(res, function onHeaders () {
-    const diff = process.hrtime(start);
-
     data.statusCode = res.statusCode;
-    data.time = diff[0] * 1e3 + diff[1] * 1e-6;
-    
     debugging();
   });
 
@@ -70,6 +65,12 @@ export default (req, res, next) => {
     logger.log(getLevel(data), logFinish(data));
   }
 
-  res.on('finish', logging);
+  res.on('finish', () => {
+    const end = process.hrtime(start);
+
+    data.time = end[0] * 1e3 + end[1] * 1e-6;
+    logging();
+  });
+
   next();
 };

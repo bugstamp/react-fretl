@@ -30,7 +30,7 @@ import {
 
 const app = express();
 
-const __ENV__ = global.__ENV__ = process.env.NODE_ENV || app.get('env');
+const __ENV__ = process.env.NODE_ENV || app.get('env');
 const PUBLIC_DIR = path.join(__dirname, '../public/');
 const HTML_FILE = path.join(PUBLIC_DIR, './index.html');
 const DEFAULT_PORT = process.env.PORT || config.get('port');
