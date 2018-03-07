@@ -1,0 +1,43 @@
+2018-03-06 07:29:55 [32minfo[39m: Server is listening: http://localhost:3000
+2018-03-06 07:29:56 [90mdata[39m: Connected to database
+2018-03-06 07:30:17 [34mdebug[39m: GET /api/products?group=latest reqId=2 userId=5a86be2a3368431b8c36df7d ip=::ffff:127.0.0.1
+2018-03-06 07:30:18 [32minfo[39m: GET /api/products?group=latest  200  [32m2074[39mms  reqId=2
+2018-03-06 07:30:18 [34mdebug[39m: GET /api/products?group=sale reqId=3 userId=5a86be2a3368431b8c36df7d ip=::ffff:127.0.0.1
+2018-03-06 07:30:18 [34mdebug[39m: GET /api/cart/ reqId=1 userId=5a86be2a3368431b8c36df7d ip=::ffff:127.0.0.1
+2018-03-06 07:30:18 [32minfo[39m: GET /api/products?group=sale  200  [32m2073[39mms  reqId=3
+2018-03-06 07:30:18 [33mwarn[39m: GET /api/cart/  404  [32m2214[39mms  reqId=1
+2018-03-06 07:30:18 [90mdata[39m: Продукт не найден
+2018-03-06 07:30:18 [34mdebug[39m: GET /api/auth reqId=4 userId=5a86be2a3368431b8c36df7d ip=::ffff:127.0.0.1
+2018-03-06 07:30:18 [33mwarn[39m: GET /api/auth  404  [32m1077[39mms  reqId=4
+2018-03-06 07:30:18 [90mdata[39m: Продукт не найден
+2018-03-06 07:30:20 [34mdebug[39m: GET /api/cart/ reqId=5 userId=5a86be2a3368431b8c36df7d ip=::ffff:127.0.0.1
+2018-03-06 07:30:20 [33mwarn[39m: GET /api/cart/  404  [32m9[39mms  reqId=5
+2018-03-06 07:30:20 [90mdata[39m: Продукт не найден
+2018-03-06 07:32:01 [34mdebug[39m: GET /api/products?group=latest reqId=7 userId=5a86be2a3368431b8c36df7d ip=::ffff:127.0.0.1
+2018-03-06 07:32:01 [34mdebug[39m: GET /api/products?group=sale reqId=8 userId=5a86be2a3368431b8c36df7d ip=::ffff:127.0.0.1
+2018-03-06 07:32:01 [32minfo[39m: GET /api/products?group=latest  304  [32m43[39mms  reqId=7
+2018-03-06 07:32:01 [32minfo[39m: GET /api/products?group=sale  304  [32m40[39mms  reqId=8
+2018-03-06 07:32:01 [34mdebug[39m: GET /api/cart/ reqId=6 userId=5a86be2a3368431b8c36df7d ip=::ffff:127.0.0.1
+2018-03-06 07:32:01 [33mwarn[39m: GET /api/cart/  404  [32m77[39mms  reqId=6
+2018-03-06 07:32:01 [90mdata[39m: Продукт не найден
+2018-03-06 07:32:01 [34mdebug[39m: GET /api/auth reqId=9 userId=5a86be2a3368431b8c36df7d ip=::ffff:127.0.0.1
+2018-03-06 07:32:01 [33mwarn[39m: GET /api/auth  404  [32m57[39mms  reqId=9
+2018-03-06 07:32:01 [90mdata[39m: Продукт не найден
+2018-03-06 07:32:01 [34mdebug[39m: GET /api/cart/ reqId=10 userId=5a86be2a3368431b8c36df7d ip=::ffff:127.0.0.1
+2018-03-06 07:32:01 [33mwarn[39m: GET /api/cart/  404  [32m11[39mms  reqId=10
+2018-03-06 07:32:01 [90mdata[39m: Продукт не найден
+2018-03-06 07:43:37 [32minfo[39m: Server is listening: http://localhost:3000
+2018-03-06 07:43:38 [90mdata[39m: Connected to database
+2018-03-06 07:43:53 [34mdebug[39m: GET /api/products?group=latest reqId=2 userId=5a86be2a3368431b8c36df7d ip=::ffff:127.0.0.1
+2018-03-06 07:43:53 [34mdebug[39m: GET /api/cart/ reqId=1 userId=5a86be2a3368431b8c36df7d ip=::ffff:127.0.0.1
+2018-03-06 07:43:54 [34mdebug[39m: GET /api/products?group=sale reqId=3 userId=5a86be2a3368431b8c36df7d ip=::ffff:127.0.0.1
+2018-03-06 07:43:54 [33mwarn[39m: GET /api/cart/  404  [32m1473[39mms  reqId=1
+2018-03-06 07:43:54 [90mdata[39m: Продукт не найден
+2018-03-06 07:43:54 [32minfo[39m: GET /api/products?group=latest  304  [32m1352[39mms  reqId=2
+2018-03-06 07:43:55 [32minfo[39m: GET /api/products?group=sale  304  [32m2354[39mms  reqId=3
+2018-03-06 07:43:55 [34mdebug[39m: GET /api/auth reqId=4 userId=5a86be2a3368431b8c36df7d ip=::ffff:127.0.0.1
+2018-03-06 07:43:55 [33mwarn[39m: GET /api/auth  404  [32m1132[39mms  reqId=4
+2018-03-06 07:43:55 [90mdata[39m: Продукт не найден
+2018-03-06 07:43:55 [34mdebug[39m: GET /api/cart/ reqId=5 userId=5a86be2a3368431b8c36df7d ip=::ffff:127.0.0.1
+2018-03-06 07:43:55 [33mwarn[39m: GET /api/cart/  404  [32m33[39mms  reqId=5
+2018-03-06 07:43:55 [90mdata[39m: Продукт не найден
