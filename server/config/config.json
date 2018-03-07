@@ -6,7 +6,7 @@
 		"password": "adminadmin"
 	},
 	"mongoose": {
-		"uri": "mongodb://admin:fretlTheBest@ds151348.mlab.com:51348/fretl",
+		"uri": "mongodb://localhost/fretl",
 		"options": {
 		}
 	},
