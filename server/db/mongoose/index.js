@@ -4,7 +4,7 @@ import Promise from 'bluebird';
 import config from '../../config';
 import logger from '../../log';
 
-const dbUri = config.get('mongoose:uri');
+const dbUri = process.env.MONGODB_URI || config.get('mongoose:uri');
 const dbOptions = config.get('mongoose:options')
 
 mongoose.connect(dbUri, dbOptions, err => {
