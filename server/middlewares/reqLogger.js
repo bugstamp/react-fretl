@@ -40,6 +40,9 @@ function logFinish(data) {
 }
 
 export default (req, res, next) => {
+  if (process.env.NODE_ENV === 'production')
+    return next();
+
   const data = {};
 
   data.reqId = req.reqId;
