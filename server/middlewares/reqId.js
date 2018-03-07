@@ -1,7 +1,7 @@
 import uuid from 'uuid/v4';
 
 export default (req, res, next) => {
-  if (global.__ENV__ === 'production') {
+  if (process.env.NODE_ENV === 'production') {
     req.reqId = uuid();
   } else {
     global.reqId = 1 + (global.reqId || 0);
