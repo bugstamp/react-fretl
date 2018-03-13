@@ -18,7 +18,7 @@ function CartList({
         <p>Ваша корзина пуста</p>
         :
         <div className="cart-list">
-          <div className="list-items">
+          <div className="items">
             {items.map((item, index) => (
               <Item
                 key={index}
