@@ -50,7 +50,7 @@ class ProductsSection extends Component {
     return (
       <section id={sectionId} ref={(node) => { this.section = node; }}>
         <Container>
-          <Row>
+          <Row className="no-gutters">
             <Col xs="12">
               <ProductsSectionDescription
                 title={title}

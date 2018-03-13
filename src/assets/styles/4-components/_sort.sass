@@ -3,13 +3,14 @@
 	flex-flow: row nowrap
 	justify-content: flex-start
 	align-items: stretch
+	margin-top: 61px
+	padding-bottom: 25px
 	font-size: 16px
 	line-height: 41px
-	margin-top: 61px
 
 	button
 		height: 42px
-		flex: 0 1 113px
+		flex: 0 113px
 		margin-right: 15px
 		border: 1px dashed #9a9a9a
 		border-radius: 40px
@@ -17,14 +18,13 @@
 		cursor: pointer
 
 		&:active,
-		&.active
+		&.is-active
 			border-color: #e0b70a
 			color: #e0b70a
 
 	.title
 		height: auto
-		flex-basis: 117px
-		align-self: flex-end
+		flex: 0 auto
 		font-size: 17px
 		line-height: 30px
 		margin: 11px 19px 0 0
@@ -48,11 +48,11 @@
 	.down .icon
 		background-position: -139px -67px
 
-	@include media-breakpoint-down(lg)
+	@media (max-width: 1070px)
 		flex-flow: row wrap
 		
 		button
-			margin-right: 2.5%
+			margin-right: 2%
 
 		.title
 			flex-basis: 100%
@@ -63,19 +63,24 @@
 		justify-content: center
 		margin: 30px auto 0
 
+		button
+			margin-right: 15px
+
 		.title
 			text-align: center
 
-	@media (max-width: 400px)
+	@media (max-width: 425px)
+		max-width: 256px
+
 		.up
 			order: 1
-			margin-right: 12px
+			margin-right: 15px
 
 		.down
 			order: 2
-			margin-right: 12px
+			margin-right: 15px
 
 		.abc
 			order: 3
-			margin-top: 12px
+			margin-top: 10px
 			margin-right: 0

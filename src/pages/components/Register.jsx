@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DocumentTitle from 'react-document-title';
 
-import RegFormLayout from '../../components/RegisterPage/RegFormLayout';
+import RegFormSection from '../../components/RegisterPage/RegFormSection';
 
 function Register({ user, requestUserAuth, requestUserReg, checkUserLogin }) {
   return (
     <DocumentTitle title="Регистрация">
       <div className="register-page">
-        <RegFormLayout
+        <div className="top" />
+        <RegFormSection
           user={user}
           requestUserReg={requestUserReg}
           requestUserAuth={requestUserAuth}

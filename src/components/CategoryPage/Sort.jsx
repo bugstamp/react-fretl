@@ -12,23 +12,19 @@ function Sort({ sort, setSort }) {
         active={sort === 'ABC'}
         className="abc"
         onClick={() => setSort('ABC')}
-      >
-        По алфавиту
-      </SortButton>
+      >По алфавиту</SortButton>
       <SortButton
         active={sort === 'UP'}
         className="up"
         onClick={() => setSort('UP')}
-      >
-        По цене
+      >По цене
         <i className="icon" />
       </SortButton>
       <SortButton
         active={sort === 'DOWN'}
         className="down"
         onClick={() => setSort('DOWN')}
-      >
-        По цене
+      >По цене
         <i className="icon" />
       </SortButton>
     </div>

@@ -9,13 +9,13 @@ import IconEmail from '../../assets/images/icon/icon-email.svg';
 import IconHome from '../../assets/images/icon/icon-home.svg';
 import IconCash from '../../assets/images/icon/icon-cash.svg';
 
-function ProfileInfo({ userData, toggleSideBar }) {
+function ProfileInfo({ userData, toggleSidebar, sidebar }) {
   return (
-    <div className="side-bar">
-      <div className="side-bar-layout">
+    <div className={`side-bar${sidebar ? ' is-show' : ''}`}>
+      <div className="profile-info">
         <button
-          className="close-button"
-          onClick={toggleSideBar}
+          className="button-close"
+          onClick={toggleSidebar}
         >
           <span />
           <span className="rot" />
@@ -62,7 +62,8 @@ ProfileInfo.defaultProps = {
 
 ProfileInfo.propTypes = {
   userData: PropTypes.objectOf(PropTypes.string),
-  toggleSideBar: PropTypes.func.isRequired,
+  toggleSidebar: PropTypes.func.isRequired,
+  sidebar: PropTypes.bool.isRequired,
 };
 
 export default ProfileInfo;

@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 
 import IconHero from '../../assets/images/icon/icon-hero.svg';
 
-function ProfileOrders({ toggleSideBar }) {
+function ProfileOrders({ toggleSidebar }) {
   return (
-    <div className="orders">
-      <div className="orders-layout">
+    <div className="profile-orders-wrapper">
+      <div className="profile-orders">
         <h2 className="title">
           <button
-            className="button-toggle-side"
-            onClick={toggleSideBar}
+            className="button-toggle-sidebar"
+            onClick={toggleSidebar}
           >
             <IconHero />
           </button>
@@ -24,7 +24,7 @@ function ProfileOrders({ toggleSideBar }) {
 }
 
 ProfileOrders.propTypes = {
-  toggleSideBar: PropTypes.func.isRequired,
+  toggleSidebar: PropTypes.func.isRequired,
 };
 
 export default ProfileOrders;

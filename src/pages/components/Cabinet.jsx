@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import DocumentTitle from 'react-document-title';
 
-import CabinetSection from '../../components/CabinetPage/CabinetSection';
+import Profile from '../../components/CabinetPage/Profile';
 
 class Cabinet extends Component {
   componentDidMount() {
@@ -17,7 +17,8 @@ class Cabinet extends Component {
     return (
       <DocumentTitle title="Личный Кабинет" >
         <div className="cabinet-page">
-          <CabinetSection userData={userData} />
+          <div className="top" />
+          <Profile userData={userData} />
         </div>
       </DocumentTitle>
     );

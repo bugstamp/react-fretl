@@ -1,0 +1,43 @@
+.right-menu
+	display: flex
+	justify-content: space-between
+	position: relative
+	
+	.search
+		flex: 0 1 100%
+		margin-right: 15px
+
+		.dropdown:after
+			left: 25px
+
+	.cart
+		flex: 0 0 114px
+		padding: 1px 0
+		
+		.dropdown:after
+			right: 25px
+
+	.dropdown
+		width: 100%
+		position: absolute
+		top: 45px
+		background-color: #fff
+		border-radius: 5px
+		visibility: hidden
+		opacity: 0
+		transition: $transitionDropDown
+
+		&:after
+			content: ''
+			width: 14px
+			height: 14px
+			position: absolute
+			top: -3px
+			background-color: inherit
+			transform: rotate(45deg)
+			border-radius: 3px
+
+		&.is-open
+			top: 65px
+			visibility: visible
+			opacity: 1

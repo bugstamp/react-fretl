@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { AvForm, AvGroup, AvInput } from 'availity-reactstrap-validation';
-import { Row, Col, Label, FormGroup } from 'reactstrap';
+import { Label, FormGroup } from 'reactstrap';
 import InputMask from 'react-input-mask';
 
 import {
@@ -68,7 +68,10 @@ class FormReg extends Component {
     } = this.props;
 
     return (
-      <AvForm className={`form reg-form ${className}`} onValidSubmit={this.handleSubmit} >
+      <AvForm
+        className={`form reg-form ${className}`}
+        onValidSubmit={this.handleSubmit}
+      >
         <div className="reg-form-container">
           <FormHeader text={title} />
           <AvGroup>
@@ -89,70 +92,63 @@ class FormReg extends Component {
               <i className="reg-form-icon fa fa-user-circle-o" />
             </div>
           </AvGroup>
-          <Row>
-            <Col xs="12" md="6">
-              <AvGroup>
-                <Label className="form-group-label" for="phone">
-                  Введите ваш номер телефона <span>*</span> :
-                </Label>
-                <div className="form-input-wrap">
-                  <AvInput
-                    type="tel"
-                    name="phone"
-                    className="phone"
-                    validate={{ async: () => {
-                      const str = this.state.phone;
+          <AvGroup className="inline">
+            <Label className="form-group-label" for="phone">
+              Введите ваш номер телефона <span>*</span> :
+            </Label>
+            <div className="form-input-wrap">
+              <AvInput
+                type="tel"
+                name="phone"
+                className="phone"
+                validate={{ async: () => {
+                  const str = this.state.phone;
 
-                      if (str) {
-                        const result = str.match(/\d/g).join('').length;
-                        return result === 12;
-                      }
+                  if (str) {
+                    const result = str.match(/\d/g).join('').length;
+                    return result === 12;
+                  }
 
-                      return false;
-                    },
-                    }}
-                    disabled
-                  />
-                  <InputMask
-                    type="tel"
-                    id="phone"
-                    className="form-control phone-mask"
-                    mask="+38 (099) 999-99-99"
-                    value={this.state.phone}
-                    ref={(input) => { this.phone = input; }}
-                    onChange={this.handleChange}
-                    alwaysShowMask="true"
-                  />
-                  <i className="reg-form-icon fa fa-phone" />
-                </div>
-              </AvGroup>
-            </Col>
-            <Col xs="12" md="6">
-              <AvGroup>
-                <Label className="form-group-label" for="email">
-                  Введите вашу почту <span>*</span> :
-                </Label>
-                <div className="form-input-wrap">
-                  <AvInput
-                    type="email"
-                    name="email"
-                    id="email"
-                    ref={(input) => { this.email = input; }}
-                    placeholder="Ваша почта"
-                    value={this.state.email}
-                    onChange={this.handleChange}
-                    validate={{ email: true }}
-                    required
-                  />
-                  <i className="reg-form-icon fa fa-envelope icon-phone" />
-                </div>
-                <FormInvalidFeedback
-                  active={loading.error === 'email'}
-                  text="Данный E-mail уже зарегистрирован!"
-                />
-              </AvGroup>
-            </Col>
-          </Row>
+                  return false;
+                } }}
+                disabled
+              />
+              <InputMask
+                type="tel"
+                id="phone"
+                className="form-control phone-mask"
+                mask="+38 (099) 999-99-99"
+                value={this.state.phone}
+                ref={(input) => { this.phone = input; }}
+                onChange={this.handleChange}
+                alwaysShowMask="true"
+              />
+              <i className="reg-form-icon fa fa-phone" />
+            </div>
+          </AvGroup>
+          <AvGroup className="inline">
+            <Label className="form-group-label" for="email">
+              Введите вашу почту <span>*</span> :
+            </Label>
+            <div className="form-input-wrap">
+              <AvInput
+                type="email"
+                name="email"
+                id="email"
+                ref={(input) => { this.email = input; }}
+                placeholder="Ваша почта"
+                value={this.state.email}
+                onChange={this.handleChange}
+                validate={{ email: true }}
+                required
+              />
+              <i className="reg-form-icon fa fa-envelope icon-phone" />
+            </div>
+            <FormInvalidFeedback
+              active={loading.error === 'email'}
+              text="Данный E-mail уже зарегистрирован!"
+            />
+          </AvGroup>
           <AvGroup>
             <Label className="form-group-label" for="address">
               Ваш адрес <span>*</span> :
@@ -171,56 +167,50 @@ class FormReg extends Component {
               <i className="reg-form-icon fa fa-home" />
             </div>
           </AvGroup>
-          <Row>
-            <Col xs="12" md="6">
-              <AvGroup>
-                <Label className="form-group-label" for="password">
-                  Введите пароль <span>*</span> :
-                </Label>
-                <div className="form-input-wrap">
-                  <AvInput
-                    type="password"
-                    name="password"
-                    id="password"
-                    ref={(input) => { this.password = input; }}
-                    placeholder="Пароль"
-                    value={this.state.password}
-                    onChange={this.handleChange}
-                    maxLength="10"
-                    minLength="6"
-                    required={pwdRequired}
-                  />
-                  <i className="reg-form-icon fa fa-lock" />
-                </div>
-              </AvGroup>
-            </Col>
-            <Col xs="12" md="6" >
-              <AvGroup>
-                <Label className="form-group-label" for="passConfirm">
-                  Повторите ваш пароль <span>*</span> :
-                </Label>
-                <div className="form-input-wrap">
-                  <AvInput
-                    type="password"
-                    name="passConfirm"
-                    id="passConfirm"
-                    ref={(input) => { this.passConfirm = input; }}
-                    placeholder="Повторите Ваш пароль"
-                    value={this.state.passConfirm}
-                    onChange={this.handleChange}
-                    maxLength="10"
-                    minLength="6"
-                    required={pwdRequired}
-                  />
-                  <i className="reg-form-icon fa fa-lock" />
-                </div>
-                <FormInvalidFeedback
-                  active={loading.error === 'password'}
-                  text="Не правильный пароль!"
-                />
-              </AvGroup>
-            </Col>
-          </Row>
+          <AvGroup className="inline">
+            <Label className="form-group-label" for="password">
+              Введите пароль <span>*</span> :
+            </Label>
+            <div className="form-input-wrap">
+              <AvInput
+                type="password"
+                name="password"
+                id="password"
+                ref={(input) => { this.password = input; }}
+                placeholder="Пароль"
+                value={this.state.password}
+                onChange={this.handleChange}
+                maxLength="10"
+                minLength="6"
+                required={pwdRequired}
+              />
+              <i className="reg-form-icon fa fa-lock" />
+            </div>
+          </AvGroup>
+          <AvGroup className="inline">
+            <Label className="form-group-label" for="passConfirm">
+              Повторите ваш пароль <span>*</span> :
+            </Label>
+            <div className="form-input-wrap">
+              <AvInput
+                type="password"
+                name="passConfirm"
+                id="passConfirm"
+                ref={(input) => { this.passConfirm = input; }}
+                placeholder="Повторите Ваш пароль"
+                value={this.state.passConfirm}
+                onChange={this.handleChange}
+                maxLength="10"
+                minLength="6"
+                required={pwdRequired}
+              />
+              <i className="reg-form-icon fa fa-lock" />
+            </div>
+            <FormInvalidFeedback
+              active={loading.error === 'password'}
+              text="Не правильный пароль!"
+            />
+          </AvGroup>
           <FormGroup>
             <FormButtonSubmit
               checking={loading.pending}

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import SearchList from './SearchList';
 
-class SearchForm extends Component {
+class Search extends Component {
   constructor(props) {
     super(props);
 
@@ -27,8 +27,8 @@ class SearchForm extends Component {
     const { items } = this.props;
 
     return (
-      <div className="search-form">
-        <div className="input">
+      <div className="search">
+        <div className="search-input">
           <i className="icon" />
           <input
             type="text"
@@ -46,13 +46,13 @@ class SearchForm extends Component {
   }
 }
 
-SearchForm.defaultProps = {
+Search.defaultProps = {
   items: [],
 };
 
-SearchForm.propTypes = {
+Search.propTypes = {
   getSearchItems: PropTypes.func.isRequired,
   items: PropTypes.arrayOf(PropTypes.object),
 };
 
-export default SearchForm;
+export default Search;

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function SortButton({ active, children, className, onClick, ...rest }) {
   return (
     <button
-      className={`${active ? `${className} active` : className}`}
+      className={`${active ? `${className} is-active` : className}`}
       onClick={onClick}
       {...rest}
     >

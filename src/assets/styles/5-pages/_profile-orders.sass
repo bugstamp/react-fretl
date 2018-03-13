@@ -1,4 +1,4 @@
-.orders
+.profile-orders-wrapper
   width: 100%
   max-width: 865px
   min-height: 350px
@@ -7,28 +7,30 @@
   margin-left: auto
   z-index: 10
 
-  .orders-layout
-    width: 100%
-    max-width: 802px
-    margin-left: auto
+  @include media-breakpoint-down(lg)
+    margin-right: auto
 
-    .title
-      display: block
-      position: relative
-      color: #000
-      font-family: $fontIntroScript
-      font-size: 33px
-      line-height: 33px
-      margin: 65px auto 40px
-      text-align: center
-      text-transform: inherit
+.profile-orders
+  width: 100%
+  max-width: 802px
+  margin-left: auto
 
-    .no-result
-      font-size: 22px
-      font-weight: 400
-      text-align: center
+  .title
+    display: block
+    position: relative
+    margin: 65px auto 40px
+    font-family: $fontIntroScript
+    font-size: 33px
+    line-height: 1em
+    color: #000
+    text-align: center
+    text-transform: inherit
 
-  .button-toggle-side
+  .no-result
+    font-size: 22px
+    text-align: center
+
+  .button-toggle-sidebar
     position: absolute
     top: 0
     left: 0
@@ -39,8 +41,8 @@
       width: 31px
       height: 33px
 
-  @include media-breakpoint-down(md)
+  @include media-breakpoint-down(lg)
     margin-right: auto
 
-    .button-toggle-side
+    .button-toggle-sidebar
       visibility: visible

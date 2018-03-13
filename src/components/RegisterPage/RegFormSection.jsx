@@ -5,10 +5,9 @@ import PropTypes from 'prop-types';
 import FormReg from '../Forms/FormReg';
 import RegFormFooter from './RegFormFooter';
 
-function RegFormLayout({ checkUserLogin, requestUserAuth, requestUserReg, user }) {
+function RegFormSection({ checkUserLogin, requestUserAuth, requestUserReg, user }) {
   return (
-    <section id="register-form-section">
-      <div className="top" />
+    <section id="register-page-form">
       <Container>
         <Row className="no-gutters">
           <Col xs="12">
@@ -31,11 +30,11 @@ function RegFormLayout({ checkUserLogin, requestUserAuth, requestUserReg, user }
   );
 }
 
-RegFormLayout.propTypes = {
+RegFormSection.propTypes = {
   user: PropTypes.objectOf(PropTypes.object).isRequired,
   requestUserAuth: PropTypes.func.isRequired,
   requestUserReg: PropTypes.func.isRequired,
   checkUserLogin: PropTypes.func.isRequired,
 };
 
-export default RegFormLayout;
+export default RegFormSection;

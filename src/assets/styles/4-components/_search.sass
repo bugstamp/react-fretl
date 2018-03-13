@@ -1,40 +1,53 @@
-.search-list
-  min-width: 264px
-  position: absolute
-  top: 45px
-  left: -3px
-  padding: 19px 25px 11px
-  background-color: #fff
-  border-radius: 5px
-  opacity: 0
-  transition: all .4s
+.search
+  position: relative
+  
+  .search-input
+    position: relative
+    font-size: 16px
+    box-sizing: content-box
 
-  &.show
-    top: 65px
-    opacity: 1
+    input
+      width: 100%
+      height: 42px
+      padding: 0 35px 0 15px
+      line-height: 42px
+      color: $clrBaseTextLighten
+      border: 1px dashed #454440
+      border-radius: 50px
+      letter-spacing: .5px
+      transition: $transitionBase
 
-  &:after
-    content: ''
-    position: absolute
-    top: -3px
-    left: 25px
-    width: 14px
-    height: 14px
-    background-color: inherit
-    transform: rotate(45deg)
-    border-radius: 3px
+      &:focus
+        color: #fff
+        border-color: rgb(154, 154, 154)
 
-  .line
-    display: block
-    padding: 8px 0
+    .icon
+      width: 15px
+      height: 15px
+      position: absolute
+      top: 12px
+      right: 19px
+      background: url('../../images/icon/main-sprite.png')
+      background-position: -139px 0
+      opacity: 1
+  
+  .dropdown
+    min-width: 264px
+    padding: 19px 25px 11px
+    left: 0
+    
+  .search-list
     font-size: 16px
     color: $clrBaseText
-    cursor: pointer
-    transition: all .3s
 
-    a
-      width: 100%
+    .item
       display: block
-     
-      &:hover
-        color: #121110
+      padding: 8px 0
+      cursor: pointer
+      transition: $transitionBase
+
+      a
+        display: block
+       
+        &:hover
+          color: #121110

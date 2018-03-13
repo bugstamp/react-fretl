@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'reactstrap';
-import { CSSTransition } from 'react-transition-group';
 
 import Logo from './Logo';
-import Menu from './Menu';
+import RightMenu from './RightMenu';
 import NavButton from './NavButton';
 
 import Navigation from './Navigation/Navigation';
 import DropDownNav from './Navigation/DropDownNav';
-import UserCart from './Cart/UserCart';
+import Cart from './Cart/Cart';
 
 import info from '../../../utils/info';
 
@@ -65,42 +64,41 @@ class FixedHeader extends Component {
     } = this.props;
 
     return (
-      <CSSTransition
-        in={show}
-        classNames="slide"
+      <section
+        id="fixed-header"
+        className={`${show ? 'is-show' : ''}`}
+        onScroll={this.scrollToShow}
       >
-        <section id="fixed-header" onScroll={this.scrollToShow}>
-          <Container>
-            <Row className="no-gutters">
-              <Col xs="6" xl="1">
-                <Logo
-                  logo={info.logo}
+        <Container>
+          <Row className="no-gutters">
+            <Col xs="6" xl="1">
+              <Logo
+                logo={info.logo}
+              />
+            </Col>
+            <Col xl="8" className="d-none d-xl-block">
+              <Navigation />
+            </Col>
+            <Col xs="6" xl="3">
+              <RightMenu>
+                <NavButton
+                  toggle={this.toggle}
+                  isOpen={collapse}
                 />
-              </Col>
-              <Col xl="8" className="d-none d-xl-block">
-                <Navigation />
-              </Col>
-              <Col xs="6" xl="3">
-                <Menu>
-                  <NavButton
-                    toggle={this.toggle}
-                    isOpen={collapse}
-                  />
-                  <UserCart
-                    getCart={getCart}
-                    cart={cart}
-                    increment={increment}
-                    decrement={decrement}
-                    remove={remove}
-                    checkout={checkout}
-                  />
-                </Menu>
-              </Col>
-            </Row>
-          </Container>
-          <DropDownNav isOpen={collapse} />
-        </section>
-      </CSSTransition>
+                <Cart
+                  getCart={getCart}
+                  cart={cart}
+                  increment={increment}
+                  decrement={decrement}
+                  remove={remove}
+                  checkout={checkout}
+                />
+              </RightMenu>
+            </Col>
+          </Row>
+        </Container>
+        <DropDownNav isOpen={collapse} />
+      </section>
     );
   }
 }

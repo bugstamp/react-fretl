@@ -6,18 +6,18 @@ function TopBar({ title, onClick, isOpen }) {
   const text = !isOpen ? 'Скрыть' : 'Показать';
 
   return (
-    <div className="top-bar">
+    <div className="topbar-wrapper">
       <Container>
         <Row className="no-gutters">
           <Col xs="12">
-            <div className="top-bar-layout">
+            <div className="topbar">
               <div className="title">{title}</div>
               <button
-                className="toggle-button"
+                className="button-toggle"
                 onClick={onClick}
               >
                 <div className="text">{text}</div>
-                <div className={`icon${isOpen ? ' check' : ''}`} />
+                <div className={`icon${isOpen ? ' is-close' : ''}`} />
               </button>
             </div>
           </Col>

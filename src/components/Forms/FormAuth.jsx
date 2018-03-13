@@ -98,7 +98,7 @@ class FormAuth extends Component {
           </Label>
           <div className="form-input-wrap">
             <AvInput
-              type="text"
+              type="email"
               name="email"
               id="email"
               ref={(input) => { this.email = input; }}

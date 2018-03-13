@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function NavButton({ toggle, isOpen }) {
   return (
     <button
-      className={`nav-button${isOpen ? ' check' : ''}`}
+      className={`nav-button${isOpen ? ' is-on' : ''}`}
       onClick={toggle}
     >
       <div className="line top" />

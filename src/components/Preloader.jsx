@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Preloader({ visible, text }) {
   return (
-    <div className={`preloader${!visible ? ' hidden' : ''}`}>
+    <div className={`preloader${!visible ? ' is-hidden' : ''}`}>
       <div className="preloader-content">
         <div className="preloader-icon">
           <i className="icon" />

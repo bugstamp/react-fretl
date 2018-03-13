@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import DocumentTitle from 'react-document-title';
 
-import ProfileEditFormLayout from '../../components/ProfileEditPage/ProfileEditFormLayout';
+import EditFormSection from '../../components/ProfileEditPage/EditFormSection';
 
 class ProfileEdit extends Component {
   componentDidMount() {
@@ -16,8 +16,9 @@ class ProfileEdit extends Component {
 
     return (
       <DocumentTitle title="Редактирование профиля">
-        <div className="edit-page">
-          <ProfileEditFormLayout
+        <div className="profile-edit-page">
+          <div className="top" />
+          <EditFormSection
             user={user}
             requestUserEdit={requestUserEdit}
           />

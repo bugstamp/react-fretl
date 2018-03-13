@@ -4,21 +4,20 @@ import { Container, Row, Col } from 'reactstrap';
 
 import FormReg from '../Forms/FormReg';
 
-function EditFormLayout({ requestUserEdit, user }) {
+function EditFormSection({ requestUserEdit, user }) {
   return (
     <section id="edit-form-section">
-      <div className="top" />
       <Container>
         <Row className="no-gutters">
           <Col xs="12">
             <FormReg
-              title="Редактирование профиля"
               userData={user.data}
               loading={user.recording}
               request={requestUserEdit}
+              className="edit-form"
+              title="Редактирование профиля"
               buttonText="Сохранить изменения"
               pwdRequired={false}
-              className="edit-form"
             />
           </Col>
         </Row>
@@ -27,9 +26,9 @@ function EditFormLayout({ requestUserEdit, user }) {
   );
 }
 
-EditFormLayout.propTypes = {
+EditFormSection.propTypes = {
   user: PropTypes.objectOf(PropTypes.object).isRequired,
   requestUserEdit: PropTypes.func.isRequired,
 };
 
-export default EditFormLayout;
+export default EditFormSection;

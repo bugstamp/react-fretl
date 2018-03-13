@@ -19,8 +19,8 @@ class Product extends Component {
     this.updateInput = this.updateInput.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.validateValue = this.validateValue.bind(this);
-    this.getOrder = this.getOrder.bind(this);
+    this.validateOrder = this.validateOrder.bind(this);
+    this.getActionOrder = this.getActionOrder.bind(this);
     this.addtoCart = this.addtoCart.bind(this);
   }
 
@@ -35,7 +35,7 @@ class Product extends Component {
     });
   }
 
-  getOrder(action) {
+  getActionOrder(action) {
     let { order } = this.state;
 
     if (action.type === 'inc') {
@@ -49,14 +49,14 @@ class Product extends Component {
     return order;
   }
 
-  validateValue() {
+  validateOrder() {
     const { value: defValue } = this.props.product;
     const { value: currentValue } = this.state;
 
     if (currentValue < defValue) {
-      return defValue;
+      return 1;
     }
-    return (currentValue / defValue).toFixed(0) * defValue;
+    return (currentValue / defValue).toFixed(0);
   }
 
   handleChange(e) {
@@ -67,7 +67,7 @@ class Product extends Component {
 
   updateInput(action) {
     const { price, value } = this.props.product;
-    const order = this.getOrder(action);
+    const order = this.getActionOrder(action);
 
     this.setState({
       price: (order * price).toFixed(2),
@@ -79,12 +79,9 @@ class Product extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    const { value: defValue } = this.props.product;
-    const value = this.validateValue();
-
     this.updateInput({
       type: 'set',
-      order: value / defValue,
+      order: this.validateOrder(),
     });
   }
 
@@ -124,9 +121,7 @@ class Product extends Component {
             <button
               className="dec update-value"
               onClick={() => this.updateInput({ type: 'dec' })}
-            >
-            -
-            </button>
+            >-</button>
             <div className="input">
               <label htmlFor="product-value">
                 <form onSubmit={this.handleSubmit}>
@@ -146,9 +141,7 @@ class Product extends Component {
             <button
               className="inc update-value"
               onClick={() => this.updateInput({ type: 'inc' })}
-            >
-            +
-            </button>
+            >+</button>
           </div>
           <ProductButton onClick={this.addtoCart}>Добавить в корзину</ProductButton>
           <NavLink

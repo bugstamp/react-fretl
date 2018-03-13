@@ -13,11 +13,6 @@ function LoginTitle() {
           </Col>
         </Row>
       </Container>
-      <div className="container">
-        <div className="row">
-          <div className="col-12" />
-        </div>
-      </div>
     </section>
   );
 }

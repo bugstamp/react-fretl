@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'reactstrap';
-import { CSSTransition } from 'react-transition-group';
 
 import ProfileInfo from './ProfileInfo';
 import ProfileOrders from './ProfileOrders';
@@ -14,10 +13,10 @@ class Profile extends Component {
       sidebar: false,
     };
 
-    this.toggleSideBar = this.toggleSideBar.bind(this);
+    this.toggleSidebar = this.toggleSidebar.bind(this);
   }
 
-  toggleSideBar() {
+  toggleSidebar() {
     this.setState({ sidebar: !this.state.sidebar });
   }
 
@@ -29,16 +28,12 @@ class Profile extends Component {
         <Row className="no-gutters">
           <Col xs="12">
             <div className="profile">
-              <CSSTransition
-                in={this.state.sidebar}
-                classNames="show"
-              >
-                <ProfileInfo
-                  userData={userData}
-                  toggleSideBar={this.toggleSideBar}
-                />
-              </CSSTransition>
-              <ProfileOrders toggleSideBar={this.toggleSideBar} />
+              <ProfileInfo
+                userData={userData}
+                toggleSidebar={this.toggleSidebar}
+                sidebar={this.state.sidebar}
+              />
+              <ProfileOrders toggleSidebar={this.toggleSidebar} />
             </div>
           </Col>
         </Row>

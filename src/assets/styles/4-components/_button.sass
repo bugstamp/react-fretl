@@ -1,0 +1,28 @@
+.button
+  display: inline-block
+  width: 100%
+  color: #fff
+  font-family: $fontIntroHead
+  background-color: $clrProductButton
+  border-bottom: 2px solid $clrProductButtonHover
+  border-radius: 50px
+  cursor: pointer
+  transition: $transitionRapidly
+
+  @include media-breakpoint-up(xl)  
+    &:not(.no-effect):hover
+      background-color: $clrProductButtonHover
+
+    &.recursive-hover
+      &:not(.no-effect):hover
+        color: $clrProductButton
+        background-color: #fff
+      
+  @include media-breakpoint-down(xl)
+    &:not(.no-effect):active
+      background-color: $clrProductButtonHover
+      
+      &.recursive-hover
+        &:not(.no-effect):active
+          color: $clrProductButton
+          background-color: #fff

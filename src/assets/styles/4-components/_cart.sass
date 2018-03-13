@@ -1,108 +1,116 @@
 .cart
-	width: 100%
-	max-width: 395px
-	min-width: 355px
-	position: absolute
-	top: 40px
-	right: 0
-	padding: 20px 20px 18px 18px
-	font-size: 16px
-	color: $clrBaseText
-	background-color: #fff
-	border-radius: 5px
-	opacity: 0
-	visibility: hidden
-	transition: $transitionDropDown
+	.cart-button
+		width: 100%
+		padding: 10px 5px 15px 5px
+		color: #1f1f1f
+		font-size: 17px
+		line-height: 10px
+		background-color: #fff
+		box-shadow: $clrCartShadow
+		border-radius: 50px
+		user-select: none
+		cursor: pointer
+		z-index: 10
+		transition: $transitionBase
 
-	&:after
-		content: ''
-		width: 15px
-		height: 15px
-		position: absolute
-		top: -3px
-		right: 25px
-		background-color: inherit
-		border-radius: 3px
-		transform: rotate(45deg)
+		&:hover
+			box-shadow: $clrCartShadowHover
 
+		.icon-cart
+			width: 15px
+			height: 15px
+			position: relative
+			top: 3px
+			left: 0
+			margin-right: 8px
+			background: url('../../images/icon/main-sprite.png')
+			background-position: -139px -16px
 
-	&.show
-		top: 54px
-		opacity: 1
-		visibility: visible
+		.text
+			margin-left: 2px
 
-	p
-		font-size: 22px
-		text-align: center
-		color: #000
+	.dropdown
+		max-width: 395px
+		min-width: 355px
+		right: 0
+		padding: 20px 20px 18px 18px
+		
+		p
+			font-size: 22px
+			text-align: center
+			color: #000
 
-	.list
-		max-height: 160px
-		overflow-x: auto
-		z-index: 1000
+	.cart-list
+		font-size: 16px
+		color: $clrBaseText
 
-		.line
+		.list-items
+			max-height: 160px
+			overflow-x: auto
+			z-index: 1000
+
+	.item
+		display: flex
+		flex-flow: row nowrap
+		padding: 2px 0
+		align-items: center
+		
+		.image
+			order: 1
+			flex: 0 32px
+			max-width: 32px
+			margin-right: 17px
+
+		.name
+			order: 2
+			flex: 0 31%
+			line-height: 1em
+			text-align: left
+
+		.value
+			order: 2
+			flex: 0 65px
+			max-width: 65px
 			display: flex
 			flex-flow: row nowrap
-			padding: 2px 0
+			justify-content: center
 			align-items: center
+			font-size: 12px
+			padding: 0 4px
+			margin-left: auto
+			border: 1px dashed #e6e6e6
+			border-radius: 20px
+			color: #000
 			
-			.image
-				order: 1
-				max-width: 32px
-				flex: 0 32px
-				margin-right: 17px
-
-			.name
-				order: 2
-				flex: 0 31%
-				line-height: 1em
-				text-align: left
-
-			.value
-				order: 2
-				max-width: 65px
-				flex: 0 65px
-				display: flex
-				flex-flow: row nowrap
-				justify-content: center
-				align-items: center
-				font-size: 12px
-				padding: 0 4px
-				margin-left: auto
-				border: 1px dashed #e6e6e6
-				border-radius: 20px
-				color: #000
-				
-				input
-					font-size: 15px
-					text-align: center
-
-				.update-value
-					width: 15px
-					font-size: 15px
-					text-align: center
-					cursor: pointer
-					user-select: none
-
-			.price
-				order: 3
-				flex: 0 67px
+			input
+				font-size: 15px
 				text-align: center
 
-			.remove
-				order: 4
-				width: 10px
-				height: 10px
-				margin: 0 4px
-				background: url("../../images/icon/remove.png") no-repeat
+			.update-value
+				width: 15px
+				font-size: 15px
+				text-align: center
 				cursor: pointer
-				transition: $transitionRapidly
+				user-select: none
 
-				&:hover
-					background: url("../../images/icon/remove-dark.png") no-repeat
+		.price
+			order: 3
+			flex: 0 67px
+			text-align: center
 
-	.result
+		.remove
+			order: 4
+			width: 10px
+			height: 10px
+			margin: 0 4px
+			background: url("../../images/icon/remove.png") no-repeat
+			cursor: pointer
+			transition: $transitionRapidly
+
+			&:hover
+				background: url("../../images/icon/remove-dark.png") no-repeat
+
+	.cart-result
 		display: flex
 		flex-flow: nowrap row
 		justify-content: space-between
@@ -118,26 +126,26 @@
 				margin-left: 10px
 				color: #000
 
-		.checkout
-			color: #fff
-			background-color: $clrProductButton
+		.button-checkout
+			width: auto
 			padding: 8px 23px
 			border-bottom: 1px solid $clrProductButtonBorder
 			border-radius: 50px
 			cursor: pointer
-	
-	@include media-breakpoint-down(lg)
-		padding: 10px
 
 	@include media-breakpoint-down(md)
-		padding: 20px 20px 18px 18px
+		.cart-button
+			.text
+				display: none
 
 	@media (max-width: 400px)
-		min-width: 320px
-		padding: 20px 10px
+		.dropdown
+			min-width: 320px
+			padding: 10px 8px
 
-		.value
-			margin: 0 auto
+		.item
+			.value
+				margin: 0 auto
 			
 			.update-value
 				display: none

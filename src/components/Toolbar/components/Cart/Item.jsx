@@ -7,7 +7,7 @@ function Item({ product, increment, decrement, remove }) {
   const value = product.order * product.value;
 
   return (
-    <div className="line">
+    <div className="item">
       <NavLink
         to={`/category/${product.category}/${product.productId}`}
         className="link"

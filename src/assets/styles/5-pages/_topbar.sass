@@ -1,0 +1,55 @@
+.topbar-wrapper
+  background-color: $clrBgGrey
+
+  .topbar
+    display: flex
+    flex-flow: row wrap
+    justify-content: flex-start
+    align-items: center
+    padding: 33px 0
+    font-size: 25px
+
+    .title
+      font-family: $fontIntroRust
+      line-height: 1em
+      color: #181818
+      text-align: left
+
+    .button-toggle
+      flex: 1 auto
+      display: flex
+      justify-content: flex-end
+      align-items: center
+      font-size: 24px
+      margin-right: 12px
+      color: #888686
+      cursor: pointer
+
+      .text
+        font-family: $fontIntroScript
+
+      .icon
+        display: inline-flex
+        width: 60px
+        height: 60px
+        margin-left: 25px
+        background: url('../../images/icon/close.png') no-repeat
+        background-position: center
+        border-radius: 50%
+        border: 1px solid #d3c9bb
+        
+        &.is-close
+          background: url('../../images/icon/check.png') no-repeat
+          background-position: center
+
+  @include media-breakpoint-down(sm)
+    .topbar
+      padding: 20px 0 28px
+
+      .title
+        flex: 0 100%
+
+  @include media-breakpoint-down(xs)
+    .topbar
+      .title
+        text-align: center

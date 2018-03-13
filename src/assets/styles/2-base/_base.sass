@@ -1,19 +1,22 @@
 @-ms-viewport
-	width        : device-width
-
-html, body
-	overflow-x   : hidden
-
+	width          : device-width
+	
+*
+	padding        : 0
+	margin         : 0
+	
+html,
 body
-	max-width    : 100%
-	width        : 100%
-	height       : 100%
-	position     : relative
-	font-family  : $fontIntroHead
-	font-size    : 19px
-	line-height  : 21px
-	color        : #000
-
+	min-height     : 100%
+	overflow-x     : hidden
+	
+body
+	width          : 100%
+	font-family    : $fontIntroHead
+	font-size      : 19px
+	line-height    : 21px
+	color          : #000
+	
 h1, h2, h3, h4, h5, h6
 	display        : inline-block
 	color          : inherit
@@ -28,7 +31,7 @@ a:active
 	text-decoration: none
 	outline        : none
 	vertical-align : baseline
-
+		
 i
 	display        : inline-block
 	
@@ -38,7 +41,6 @@ img
 	height         : auto
 	
 input
-	padding        : 0
 	font-family    : inherit
 	color          : inherit
 	background     : none
@@ -47,57 +49,27 @@ input
 	
 section
 	width          : 100%
+	max-width      : 100%
 	position       : relative
 	
 button,
 [role="button"]
-	padding        : 0
 	font-family    : inherit
 	color          : inherit
-	background  	 : none
+	background     : none
 	border         : none
 	outline        : none
 	text-align     : center
 
 	&:focus
-		outline: none
-	
-.button
-	display: inline-block
-	width: 100%
-	color: #fff
-	font-family: $fontIntroHead
-	background-color: $clrProductButton
-	border-bottom: 2px solid $clrProductButtonHover
-	border-radius: 50px
-	cursor: pointer
-	transition: $transitionRapidly
-
-	@include media-breakpoint-up(xl)	
-		&:not(.no-effect):hover
-			background-color: $clrProductButtonHover
-
-		&.recursive-hover
-			&:not(.no-effect):hover
-				color: $clrProductButton
-				background-color: #fff
-			
-	@include media-breakpoint-down(xl)
-		&:not(.no-effect):active
-			background-color: $clrProductButtonHover
-			
-			&.recursive-hover
-				&:not(.no-effect):active
-					color: $clrProductButton
-					background-color: #fff
+		outline      : none
 
 .link
 	text-decoration: underline
-	cursor: pointer
-	transition: $transitionEaseInOut
+	cursor         : pointer
+	transition     : $transitionEaseInOut
 
 	&:hover
-		color: $clrLinkHover
-		text-shadow: $clrLinkShadow
+		color          : $clrLinkHover
+		text-shadow    : $clrLinkShadow
 		text-decoration: none
-		

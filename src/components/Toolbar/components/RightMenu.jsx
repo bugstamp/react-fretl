@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Menu({ children }) {
+function RightMenu({ children }) {
   return (
-    <div className="menu">
+    <div className="right-menu">
       {children}
     </div>
   );
 }
 
-Menu.propTypes = {
+RightMenu.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Menu;
+export default RightMenu;

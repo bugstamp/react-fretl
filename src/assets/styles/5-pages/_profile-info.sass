@@ -9,17 +9,19 @@
   transition: $transitionEaseInOut
   z-index: 50
 
-  /* Animation */
-  &.show-enter
+  &.is-show
     left: -21px
 
-  .side-bar-layout
-    max-width: 290px
-    width: 100%
-    position: relative
-    margin-left: auto
+  @include media-breakpoint-down(lg)
+    left: -341px
 
-  .close-button
+.profile-info
+  max-width: 290px
+  width: 100%
+  position: relative
+  margin-left: auto
+
+  .button-close
     display: block
     width: 30px
     height: 30px
@@ -82,8 +84,6 @@
       &.home
         margin-bottom: 44px
 
-  @include media-breakpoint-down(md)
-    left: -341px
-
-    .close-button
+  @include media-breakpoint-down(lg)
+    .button-close
       visibility: visible

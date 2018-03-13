@@ -2,16 +2,18 @@
 	height: 70px
 	position: fixed
 	top: -70px
+	right: 0
 	left: 0
 	color: $clrHeaderLink
 	background-color: #fafaf8
-	transition: $transitionBase
+	visibility: hidden
 	opacity: 0
 	z-index: 100
+	transition: $transitionRapidly
 
-	/* Animation */
-	&.slide-enter
+	&.is-show
 		top: 0
+		visibility: visible
 		opacity: 1
 
 	.logo
@@ -29,18 +31,18 @@
 		margin-left: 77.5px
 		margin-top: 24px
 
-	.menu
+	.right-menu
+		margin-top: 12px
 		justify-content: flex-end
+		align-items: center
 
-		.shopping-cart
-			margin-top: 13px
-
+		.cart
 			.cart-button,			
 			.cart-button:hover
 				box-shadow: $clrFixedCartShadow
 
-			.cart
-				top: 70px
+			.dropdown
+				top: 58px
 
 				@media (max-width: 400px)
 					right: -20px
@@ -50,6 +52,6 @@
 			h3
 				font-size: 20px
 
-		.menu
-			.shopping-cart
+		.right-menu
+			.cart
 				flex: 0 0 90px
