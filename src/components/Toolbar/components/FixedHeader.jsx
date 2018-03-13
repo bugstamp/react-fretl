@@ -18,19 +18,25 @@ class FixedHeader extends Component {
 
     this.state = {
       show: false,
-      collapse: false,
+      nav: {
+        collapse: false,
+      },
+      cart: {
+        open: false,
+      },
     };
 
     this.scrollToShow = this.scrollToShow.bind(this);
-    this.toggle = this.toggle.bind(this);
+    this.toggleNav = this.toggleNav.bind(this);
+    this.toggleCart = this.toggleCart.bind(this);
   }
 
-  componentWillMount() {
-    window.addEventListener('scroll', this.scrollToShow);
+  componentDidMount() {
+    window.addEventListener('scroll', this.scrollToShow, false);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.scrollToShow);
+    window.removeEventListener('scroll', this.scrollToShow, false);
   }
 
   scrollToShow() {
@@ -38,22 +44,33 @@ class FixedHeader extends Component {
     const limit = 90;
 
     if (scrollTop > limit && !this.state.show) {
-      this.setState({ show: true });
+      this.setState({
+        show: true,
+      });
     } else
     if (scrollTop < limit && this.state.show) {
       this.setState({
         show: false,
-        collapse: false,
+        nav: {
+          collapse: false,
+        },
+        cart: {
+          open: false,
+        },
       });
     }
   }
 
-  toggle() {
-    this.setState({ collapse: !this.state.collapse });
+  toggleNav() {
+    this.setState({ nav: { collapse: !this.state.nav.collapse } });
+  }
+
+  toggleCart() {
+    this.setState({ cart: { open: !this.state.cart.open } });
   }
 
   render() {
-    const { show, collapse } = this.state;
+    const { show } = this.state;
     const {
       cart,
       getCart,
@@ -67,7 +84,6 @@ class FixedHeader extends Component {
       <section
         id="fixed-header"
         className={`${show ? 'is-show' : ''}`}
-        onScroll={this.scrollToShow}
       >
         <Container>
           <Row className="no-gutters">
@@ -82,10 +98,12 @@ class FixedHeader extends Component {
             <Col xs="6" xl="3">
               <RightMenu>
                 <NavButton
-                  toggle={this.toggle}
-                  isOpen={collapse}
+                  isOpen={this.state.nav.collapse}
+                  toggle={this.toggleNav}
                 />
                 <Cart
+                  isOpen={this.state.cart.open}
+                  toggle={this.toggleCart}
                   getCart={getCart}
                   cart={cart}
                   increment={increment}
@@ -97,7 +115,7 @@ class FixedHeader extends Component {
             </Col>
           </Row>
         </Container>
-        <DropDownNav isOpen={collapse} />
+        <DropDownNav isOpen={this.state.nav.collapse} />
       </section>
     );
   }

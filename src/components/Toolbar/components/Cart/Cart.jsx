@@ -5,17 +5,6 @@ import CartButton from './CartButton';
 import CartList from './CartList';
 
 class Cart extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      open: false,
-    };
-
-    this.toggle = this.toggle.bind(this);
-    this.getTotalSum = this.getTotalSum.bind(this);
-  }
-
   componentDidMount() {
     const { getCart } = this.props;
 
@@ -33,18 +22,15 @@ class Cart extends Component {
     return cart.items.length === 0 ? 0 : Number(sum).toFixed(2);
   }
 
-  toggle() {
-    this.setState({ open: !this.state.open });
-  }
-
   render() {
-    const { open } = this.state;
     const {
       increment,
       decrement,
       remove,
       checkout,
       cart,
+      isOpen,
+      toggle,
     } = this.props;
     const totalSum = this.getTotalSum();
     const quantity = cart.items.length;
@@ -53,10 +39,10 @@ class Cart extends Component {
       <div className="cart">
         <CartButton
           quantity={quantity}
-          toggle={this.toggle}
+          toggle={toggle}
         />
         <CartList
-          isOpen={open}
+          isOpen={isOpen}
           items={cart.items}
           increment={id => increment(id)}
           decrement={id => decrement(id)}
@@ -70,6 +56,8 @@ class Cart extends Component {
 }
 
 Cart.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  toggle: PropTypes.func.isRequired,
   increment: PropTypes.func.isRequired,
   decrement: PropTypes.func.isRequired,
   remove: PropTypes.func.isRequired,

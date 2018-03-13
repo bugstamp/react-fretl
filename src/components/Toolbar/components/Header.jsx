@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'reactstrap';
 
@@ -12,63 +12,97 @@ import Cart from './Cart/Cart';
 
 import info from '../../../utils/info';
 
-function Header(props) {
-  const {
-    search,
-    getSearchItems,
-    cart,
-    getCart,
-    increment,
-    decrement,
-    remove,
-    checkout,
-    user,
-    requestUserAuth,
-    requestUserLogout,
-    checkUserLogin,
-  } = props;
+class Header extends Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <section id="header">
-      <Container>
-        <Row className="no-gutters">
-          <Col xs="12" lg="5" className="order-lg-2" >
-            <Phone
-              phone={info.phone}
-            >
-              <UserPanel
-                user={user}
-                checkUserLogin={checkUserLogin}
-                requestUserAuth={requestUserAuth}
-                requestUserLogout={requestUserLogout}
+    this.state = {
+      cart: {
+        open: false,
+      },
+    };
+
+    this.toggleCart = this.toggleCart.bind(this);
+    this.closeCart = this.closeCart.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.closeCart, false);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.closeCart, false);
+  }
+
+  toggleCart() {
+    this.setState({ cart: { open: !this.state.cart.open } });
+  }
+
+  closeCart() {
+    this.setState({ cart: { open: false } });
+  }
+
+  render() {
+    const {
+      search,
+      getSearchItems,
+      cart,
+      getCart,
+      increment,
+      decrement,
+      remove,
+      checkout,
+      user,
+      requestUserAuth,
+      requestUserLogout,
+      checkUserLogin,
+    } = this.props;
+    const { open } = this.state.cart;
+
+    return (
+      <section id="header">
+        <Container>
+          <Row className="no-gutters">
+            <Col xs="12" lg="5" className="order-lg-2" >
+              <Phone
+                phone={info.phone}
+              >
+                <UserPanel
+                  user={user}
+                  checkUserLogin={checkUserLogin}
+                  requestUserAuth={requestUserAuth}
+                  requestUserLogout={requestUserLogout}
+                />
+              </Phone>
+            </Col>
+            <Col xs="12" lg="3" className="order-lg-1" >
+              <Logo
+                logo={info.logo}
               />
-            </Phone>
-          </Col>
-          <Col xs="12" lg="3" className="order-lg-1" >
-            <Logo
-              logo={info.logo}
-            />
-          </Col>
-          <Col xs="12" lg="4" className="order-lg-12" >
-            <RightMenu>
-              <Search
-                getSearchItems={getSearchItems}
-                items={search.items}
-              />
-              <Cart
-                getCart={getCart}
-                cart={cart}
-                increment={increment}
-                decrement={decrement}
-                remove={remove}
-                checkout={checkout}
-              />
-            </RightMenu>
-          </Col>
-        </Row>
-      </Container>
-    </section>
-  );
+            </Col>
+            <Col xs="12" lg="4" className="order-lg-12" >
+              <RightMenu>
+                <Search
+                  getSearchItems={getSearchItems}
+                  items={search.items}
+                />
+                <Cart
+                  toggle={this.toggleCart}
+                  isOpen={open}
+                  cart={cart}
+                  getCart={getCart}
+                  increment={increment}
+                  decrement={decrement}
+                  remove={remove}
+                  checkout={checkout}
+                />
+              </RightMenu>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+    );
+  }
 }
 
 Header.propTypes = {
