@@ -1,8 +1,32 @@
 {
   "name": "react-fretl",
   "version": "0.0.3",
+  "author": {
+    "name": "Kiril Hryshchenko",
+    "url": "http://github.com/bugstamp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bugstamp/react-fretl"
+  },
+  "homepage": "https://react-fretl.herokuapp.com/",
+  "nodemonConfig": {
+    "verbose": true,
+    "ignore": [
+        ".git/*", 
+        "node_modules/*",
+        "public/*",
+        "src/*",
+        "npm-debug.log"
+    ],
+    "env": {
+        "NODE_ENV": "development",
+        "SHOP_RELOAD": false
+    }
+  },
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.js",
+    "start": "node server.js",
+    "dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "server": "nodemon server.js"
   },
