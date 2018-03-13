@@ -37,9 +37,9 @@ export default async () => {
 						oldPrice: price
 					});
 				
-				return Promise.resolve(loadedProduct);
+				return loadedProduct;
 			} catch (e) {
-				return Promise.reject(e);
+				throw e;
 			}
 		});
 

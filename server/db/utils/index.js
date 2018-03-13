@@ -1,7 +1,7 @@
-import loadProducts from './loadProducts';
+import shopReload from './shopReload';
 import sessionStore from './sessionStore';
 
 export {
-  loadProducts,
+  shopReload,
   sessionStore
 };

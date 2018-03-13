@@ -1,5 +1,5 @@
 import {
-  loadProducts,
+  shopReload,
   sessionStore
 } from './utils/';
 
@@ -10,7 +10,7 @@ import {
 } from './models/';
 
 export default {
-  loadProducts,
+  shopReload,
   sessionStore,
   Product,
   User,
