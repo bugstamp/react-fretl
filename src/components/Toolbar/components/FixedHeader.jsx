@@ -63,6 +63,10 @@ class FixedHeader extends Component {
 
   toggleNav() {
     this.setState({ nav: { collapse: !this.state.nav.collapse } });
+
+    if (this.state.cart.open) {
+      this.setState({ cart: { open: false } });
+    }
   }
 
   toggleCart() {
