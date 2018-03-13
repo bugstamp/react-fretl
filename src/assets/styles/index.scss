@@ -23,7 +23,6 @@ $fa-font-path: "~font-awesome/fonts/";
 @import './3-sections/_home-title';
 @import './3-sections/_latest';
 @import './3-sections/_footer.sass';
-@import './3-sections/_preloader';
 
 @import './4-components/_logo';
 @import './4-components/_phone';
@@ -45,6 +44,7 @@ $fa-font-path: "~font-awesome/fonts/";
 @import './4-components/_button-else';
 @import './4-components/_sort';
 
+@import './5-pages/_preloader';
 @import './5-pages/_top';
 @import './5-pages/_topbar';
 @import './5-pages/_category-title';
