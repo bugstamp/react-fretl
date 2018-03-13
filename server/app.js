@@ -30,13 +30,13 @@ import {
 
 const app = express();
 
-if (process.env.SHOP_RELOAD)
+if (config.get('SHOP_RELOAD') === 'true')
   db.shopReload();
 
-const __ENV__ = process.env.NODE_ENV || app.get('env');
 const PUBLIC_DIR = path.join(__dirname, '../public/');
 const HTML_FILE = path.join(PUBLIC_DIR, './index.html');
-const DEFAULT_PORT = process.env.PORT || config.get('port');
+const __ENV__ = config.get('NODE_ENV');
+const DEFAULT_PORT = config.any('PORT', 'defaultPort');
 const sessionConfig = config.get('session');
 
 app.set('port', DEFAULT_PORT);

@@ -1,6 +1,6 @@
 {
 	"name": "Fretl",
-	"port": 3000,
+	"defaultPort": 3000,
 	"mail": {
 		"user": "fretl.best@gmail.com",
 		"password": "adminadmin"
