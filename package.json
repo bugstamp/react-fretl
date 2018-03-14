@@ -25,8 +25,7 @@
     }
   },
   "scripts": {
-    "start": "node server.js",
-    "dev": "webpack-dev-server --config webpack.dev.js",
+    "start": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "server": "nodemon server.js"
   },
