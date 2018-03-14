@@ -7,6 +7,7 @@ function NotFound() {
   return (
     <DocumentTitle title="404">
       <div className="notfound-page">
+        <div className="top" />
         <NotFoundTitle />
       </div>
     </DocumentTitle>
