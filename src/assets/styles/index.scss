@@ -1,4 +1,4 @@
-$fa-font-path: "~font-awesome/fonts/";
+$fa-font-path: '~font-awesome/fonts/';
 
 @import './1-mixins/_bootstrap-customize';
 /* @import './1-mixins/_poly-fluid-sizing'; */
@@ -7,8 +7,8 @@ $fa-font-path: "~font-awesome/fonts/";
 
 @import '~bootstrap/scss/bootstrap';
 @import '~reset-css/_reset';  
-@import "~font-awesome/scss/font-awesome";
-@import "~slick-carousel/slick/slick.css";
+@import '~font-awesome/scss/font-awesome';
+@import '~slick-carousel/slick/slick.css';
 /* @import '~sass-rem'; */
 
 @import './2-base/_fonts';
